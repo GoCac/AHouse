@@ -1,0 +1,54 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - AsyncDisplayKit (1.9.1):
+    - AsyncDisplayKit/ASDealloc2MainObject (= 1.9.1)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.9.1)
+  - FLAnimatedImage (1.0.8)
+  - Masonry (0.6.3)
+  - MJRefresh (2.5.0)
+  - PINCache (2.1.1)
+  - PINRemoteImage (1.2.2):
+    - PINRemoteImage/FLAnimatedImage (= 1.2.2)
+  - PINRemoteImage/Core (1.2.2):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (1.2.2):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0)
+  - AsyncDisplayKit
+  - Masonry
+  - MJRefresh (~> 2.4)
+  - PINRemoteImage
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AsyncDisplayKit: 7bf2b3fa444284f80fd0c1e36655e324549f79d2
+  FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  MJRefresh: 4bce3b592ae052ff89473b2907278bf8a80abdd3
+  PINCache: 69f0e0a019ce45fcf72ad2a5e97d977c9bb53bc7
+  PINRemoteImage: 9f6f484bbceee15e2df5aee0beeac2e261e4ac81
+
+COCOAPODS: 0.36.4

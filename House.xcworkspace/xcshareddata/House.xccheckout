@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>23FCD0E1-F18E-429C-A3C2-6D39511A8E85</string>
+	<key>IDESourceControlProjectName</key>
+	<string>House</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F38073D58ADC4A6EC204B2359B8855685E758BCD</key>
+		<string>https://github.com/nannanIT/A-House.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>House.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F38073D58ADC4A6EC204B2359B8855685E758BCD</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nannanIT/A-House.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F38073D58ADC4A6EC204B2359B8855685E758BCD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F38073D58ADC4A6EC204B2359B8855685E758BCD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>House</string>
+		</dict>
+	</array>
+</dict>
+</plist>
