@@ -9,5 +9,5 @@
 #import "ServerResult.h"
 
 @interface ServerArrayResult : ServerResult
-
+@property(nonatomic, strong) NSArray *array;
 @end

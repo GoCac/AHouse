@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QMapKit/QMapKit.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<QMapViewDelegate>
 
 @end

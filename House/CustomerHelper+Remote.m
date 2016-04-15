@@ -14,7 +14,7 @@
 @implementation CustomerHelper (Remote)
 + (void)fetchCustomers:(void (^)(NSArray *models))success fail:(void (^)(NSString *))fail {
     [[NetWorkManager shareSM] GET:HELPER_SERVER_URL parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        ServerResult *result = [ServerUtils parseServerResponse:responseObject resultType:ServerResultTypeArray];
+        ServerArrayResult *result = [ServerUtils parseServerArrayResponse:responseObject];
         if (result.isSuccess) {
             NSArray *models = [ParseJson parseJsonArray:result.array mClass:[self class]];
             success(models);

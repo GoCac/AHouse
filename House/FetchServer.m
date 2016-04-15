@@ -14,7 +14,7 @@
 @implementation FetchServer
 + (void)postModelFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelsBlock)success failure:(failureBlock)failure error:(errorBlock)error {
     [[NetWorkManager shareSM] POST:url parameters:params success:^(NSURLSessionDataTask * task, id responseObject) {
-        ServerResult *result = [ServerUtils parseServerResponse:responseObject resultType:ServerResultTypeModel];
+
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         
     }];
@@ -33,7 +33,7 @@
 }
 
 + (void)handleModelsResponse:(id)response mClass:(Class)mClass success:(successModelsBlock)success failure:(failureBlock)failure {
-    ServerResult *result = [ServerUtils parseServerResponse:response resultType:ServerResultTypeArray];
+    ServerArrayResult *result = [ServerUtils parseServerArrayResponse:response];
     if (result.isSuccess) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             NSArray *models = [ParseJson parseJsonArray:result.array mClass:mClass];
@@ -44,7 +44,6 @@
     } else {
         failure(result.code);
     }
-
 }
 
 + (void)getModelFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelBlock)success failure:(failureBlock)failure error:(errorBlock)error {

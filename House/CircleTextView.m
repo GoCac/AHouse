@@ -71,7 +71,8 @@
 }
 
 - (void)selectedAtIndex:(NSUInteger)index {
-    if (self.currentIndex == index || index >= self.number) {
+    NSAssert((index >= 0 && index < self.number), @"index should be >=0 and < %ld", self.number);
+    if (self.currentIndex == index) {
         return;
     }
     MenuView *preMenuView = [self.items objectAtIndex:self.currentIndex];

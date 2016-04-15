@@ -9,19 +9,22 @@
 #import "ServerUtils.h"
 
 @implementation ServerUtils
-+ (ServerResult *)parseServerResponse:(id)response resultType:(ServerResultType)resultType {
-    ServerResult *result = [[ServerResult alloc] init];
++ (ServerArrayResult *)parseServerArrayResponse:(id)response {
+    ServerArrayResult *result = [[ServerArrayResult alloc] init];
     NSInteger code = [response[CODE] integerValue];
     [result setCode:code];
     [result setSuccess:(CODE_SUCCESS == code)];
-    [result setResultType:resultType];
-    if (CODE_SUCCESS == code) {
-        if ([result isArrayType]) {
-            [result setArray:response[RESULT]];
-        } else {
-            [result setModel:response[RESULT]];
-        }
-    }
+    [result setArray:response[RESULT]];
     return result;
 }
+
++ (ServerObjResult *)parseServerObjResponse:(id)response {
+    ServerObjResult *result = [[ServerObjResult alloc] init];
+    NSInteger code = [response[CODE] integerValue];
+    [result setCode:code];
+    [result setSuccess:(CODE_SUCCESS == code)];
+    [result setObj:response[RESULT]];
+    return result;
+}
+
 @end

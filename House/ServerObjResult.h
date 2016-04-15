@@ -9,5 +9,5 @@
 #import "ServerResult.h"
 
 @interface ServerObjResult : ServerResult
-
+@property(nonatomic, strong) id obj;
 @end

@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServerResult.h"
+#import "ServerArrayResult.h"
+#import "ServerObjResult.h"
 
 @interface ServerUtils : NSObject
-+ (ServerResult *)parseServerResponse:(id)response resultType:(ServerResultType)resultType;
++ (ServerArrayResult *)parseServerArrayResponse:(id)response;
++ (ServerObjResult *)parseServerObjResponse:(id)response;
 @end

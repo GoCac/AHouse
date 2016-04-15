@@ -13,6 +13,7 @@
 #import "TestViewController.h"
 #import "View+MASAdditions.h"
 #import "WebViewController.h"
+#import "MapViewController.h"
 
 @interface AboutViewController () <UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong) UIButton *button;
@@ -58,8 +59,10 @@
             FeedbackViewController *feedbackController = [[FeedbackViewController alloc] init];
             [self.tabBarController.navigationController pushViewController:feedbackController animated:YES];
         } else if (1 == [indexPath row]) {
-            TestViewController *testViewController = [[TestViewController alloc] init];
-            [self.tabBarController.navigationController pushViewController:testViewController animated:YES];
+//            TestViewController *testViewController = [[TestViewController alloc] init];
+//            [self.tabBarController.navigationController pushViewController:testViewController animated:YES];
+            MapViewController *mapViewController = [[MapViewController alloc] init];
+            [self.tabBarController.navigationController pushViewController:mapViewController animated:YES];
         }
     } else {
         if (0 == [indexPath row]) {

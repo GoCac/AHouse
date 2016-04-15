@@ -11,6 +11,7 @@
 #import "JCPrefixHeader.pch"
 #import "HouseDetailView.h"
 #import "CircleTextView.h"
+#import "MapViewController.h"
 
 @interface HouseDetailViewController () <CircleTextViewDelegate>
 @property(nonatomic, strong) CircleView *circleView;
@@ -27,6 +28,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:view];
     
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToMap)]];
     NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", nil];
     self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES timeInterval:3.0f];
     [self.circleView setImages:images];
@@ -41,6 +43,12 @@
     [self.view addSubview:self.circleTextView];
 }
 
+- (void)jumpToMap {
+    MapViewController *mapViewController = [[MapViewController alloc] init];
+    [self.navigationController pushViewController:mapViewController animated:YES];
+}
+
+#pragma CircleTextViewDelegate
 - (void)circleTextView:(CircleTextView *)circleTextView didSelectedAtIndex:(NSUInteger)index {
     if (DEBUG) {
         NSLog(@"You clicked circleView at index %lu", index);

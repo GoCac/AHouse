@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7CC05B0E578F8A714611E07A6D8D98FE088168BE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7CC05B0E578F8A714611E07A6D8D98FE088168BE" : 0,
+    "F38073D58ADC4A6EC204B2359B8855685E758BCD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "23FCD0E1-F18E-429C-A3C2-6D39511A8E85",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7CC05B0E578F8A714611E07A6D8D98FE088168BE" : "AHouse\/",
+    "F38073D58ADC4A6EC204B2359B8855685E758BCD" : "House"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "House",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "House.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nannanIT\/AHouse.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7CC05B0E578F8A714611E07A6D8D98FE088168BE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nannanIT\/A-House.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F38073D58ADC4A6EC204B2359B8855685E758BCD"
+    }
+  ]
+}

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E2D3FD060E85F234B5214FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1FE1855D7102A7419545DD /* libPods.a */; };
+		BB1A1B121CBBC40500181CE0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A1B111CBBC40500181CE0 /* MapViewController.m */; };
 		BB2BAC9B1BE8E77100DB0FD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2BAC9A1BE8E77100DB0FD8 /* main.m */; };
 		BB2BAC9E1BE8E77100DB0FD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2BAC9D1BE8E77100DB0FD8 /* AppDelegate.m */; };
 		BB2BACA61BE8E77100DB0FD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2BACA51BE8E77100DB0FD8 /* Images.xcassets */; };
@@ -71,6 +72,8 @@
 		BBB1F4631C3E1A8700709674 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4621C3E1A8700709674 /* WebViewController.m */; };
 		BBB1F4661C436C8000709674 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4651C436C8000709674 /* StringUtils.m */; };
 		BBB1F4691C4E201100709674 /* SaveModelUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4681C4E201100709674 /* SaveModelUtils.m */; };
+		BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */; };
+		BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,8 @@
 /* Begin PBXFileReference section */
 		4D1FE1855D7102A7419545DD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D793797F06B04B112C368D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BB1A1B101CBBC40500181CE0 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		BB1A1B111CBBC40500181CE0 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		BB2BAC951BE8E77100DB0FD8 /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2BAC991BE8E77100DB0FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB2BAC9A1BE8E77100DB0FD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -205,6 +210,10 @@
 		BBB1F4651C436C8000709674 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
 		BBB1F4671C4E201100709674 /* SaveModelUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveModelUtils.h; sourceTree = "<group>"; };
 		BBB1F4681C4E201100709674 /* SaveModelUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveModelUtils.m; sourceTree = "<group>"; };
+		BBDD44831CC0CED000B0CC55 /* ServerArrayResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerArrayResult.h; sourceTree = "<group>"; };
+		BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerArrayResult.m; sourceTree = "<group>"; };
+		BBDD44861CC0CF0C00B0CC55 /* ServerObjResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerObjResult.h; sourceTree = "<group>"; };
+		BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerObjResult.m; sourceTree = "<group>"; };
 		CDD2CFB3A835B7CBD32A1C7D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -337,6 +346,8 @@
 				BBB1F4591C33B4C100709674 /* TestViewController.m */,
 				BBB1F4611C3E1A8700709674 /* WebViewController.h */,
 				BBB1F4621C3E1A8700709674 /* WebViewController.m */,
+				BB1A1B101CBBC40500181CE0 /* MapViewController.h */,
+				BB1A1B111CBBC40500181CE0 /* MapViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -362,6 +373,10 @@
 				BBB1F4561C2E8C7B00709674 /* CustomerHelper.m */,
 				BBB1F45E1C3BBE7A00709674 /* Slideshow.h */,
 				BBB1F45F1C3BBE7A00709674 /* Slideshow.m */,
+				BBDD44831CC0CED000B0CC55 /* ServerArrayResult.h */,
+				BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */,
+				BBDD44861CC0CF0C00B0CC55 /* ServerObjResult.h */,
+				BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -718,6 +733,7 @@
 				BB7B86591C91A20D00C961C4 /* HouseDetailViewController.m in Sources */,
 				BB7F519A1C05B61E00E4634F /* ActivityTableViewController.m in Sources */,
 				BBB1F44E1C1EEAA400709674 /* ServerResult.m in Sources */,
+				BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */,
 				BB2BACE31BEB956000DB0FD8 /* CircleView.m in Sources */,
 				BB2BACC61BEA341A00DB0FD8 /* BaseTableViewController.m in Sources */,
 				BB6206831C8EDE7800F2D738 /* BaseViewController.m in Sources */,
@@ -725,6 +741,7 @@
 				BB6206861C8EDF1300F2D738 /* NetWorkManager.m in Sources */,
 				BBB1F4661C436C8000709674 /* StringUtils.m in Sources */,
 				BB7B86651C92825B00C961C4 /* CircleTextView.m in Sources */,
+				BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */,
 				BBB1F4601C3BBE7A00709674 /* Slideshow.m in Sources */,
 				BB7F518F1C049F3000E4634F /* ParseJson.m in Sources */,
 				BB7F51C01C088CE800E4634F /* FeedbackViewController.m in Sources */,
@@ -738,6 +755,7 @@
 				BBB1F4511C1EF19A00709674 /* ServerUtils.m in Sources */,
 				BBB1F4471C1D793500709674 /* CircleInfo.m in Sources */,
 				BBB1F4441C1AC9A100709674 /* ALBaseCell.m in Sources */,
+				BB1A1B121CBBC40500181CE0 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,11 @@
 #import "ServerArrayResult.h"
 
 @implementation ServerArrayResult
-
+- (instancetype)init {
+    if (self = [super init]) {
+        self.code = -1;
+        self.resultType = ServerResultTypeArray;
+    }
+    return self;
+}
 @end

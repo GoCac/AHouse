@@ -9,5 +9,11 @@
 #import "ServerObjResult.h"
 
 @implementation ServerObjResult
-
+- (instancetype)init {
+    if (self = [super init]) {
+        self.code = -1;
+        self.resultType = ServerResultTypeObj;
+    }
+    return self;
+}
 @end

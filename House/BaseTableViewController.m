@@ -29,7 +29,7 @@
     _manger = [NetWorkManager shareRM];
     [self.tableView setMj_header:[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)]];
     [self.tableView setMj_footer:[MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)]];
-    self.datas = [[NSMutableArray alloc] init];
+    _datas = [[NSMutableArray alloc] init];
     self.alertView = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
     [self.tableView setSeparatorColor:[UIColor orangeColor]];
     [self.tableView setAllowsMultipleSelection:NO];

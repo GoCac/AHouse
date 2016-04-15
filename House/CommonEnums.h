@@ -13,11 +13,6 @@ typedef NS_ENUM(NSUInteger, HTTPMethodType) {
     HTTPMethodTypePost,
 };
 
-typedef NS_ENUM(NSUInteger, ServerResultType) {
-    ServerResultTypeArray,
-    ServerResultTypeModel,
-};
-
 @interface CommonEnums : NSObject
 
 @end

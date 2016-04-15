@@ -21,8 +21,6 @@
 @end
 
 @implementation CircleView
-
-
 - (instancetype)initWithFrame:(CGRect)frame autoPlay:(BOOL)autoPlay images:(NSArray *)images timeInterval:(NSUInteger)timeInterval {
     if(self = [super initWithFrame:frame]) {
         [self initWithAutoPlay:autoPlay timeInterval:timeInterval];
