@@ -74,6 +74,7 @@
 		BBB1F4691C4E201100709674 /* SaveModelUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4681C4E201100709674 /* SaveModelUtils.m */; };
 		BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */; };
 		BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */; };
+		BBE129FB1CD8A8AD00968A4B /* Househelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE129FA1CD8A8AD00968A4B /* Househelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,8 @@
 		BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerArrayResult.m; sourceTree = "<group>"; };
 		BBDD44861CC0CF0C00B0CC55 /* ServerObjResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerObjResult.h; sourceTree = "<group>"; };
 		BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerObjResult.m; sourceTree = "<group>"; };
+		BBE129F91CD8A8AD00968A4B /* Househelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Househelpers.h; sourceTree = "<group>"; };
+		BBE129FA1CD8A8AD00968A4B /* Househelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Househelpers.m; sourceTree = "<group>"; };
 		CDD2CFB3A835B7CBD32A1C7D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -377,6 +380,8 @@
 				BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */,
 				BBDD44861CC0CF0C00B0CC55 /* ServerObjResult.h */,
 				BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */,
+				BBE129F91CD8A8AD00968A4B /* Househelpers.h */,
+				BBE129FA1CD8A8AD00968A4B /* Househelpers.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -711,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB2BACD01BEB47B500DB0FD8 /* News.m in Sources */,
+				BBE129FB1CD8A8AD00968A4B /* Househelpers.m in Sources */,
 				BB7F51921C0566A900E4634F /* HouseDetail.m in Sources */,
 				BB2BACCD1BEB445C00DB0FD8 /* BaseModel.m in Sources */,
 				BB7F51321BF1ED7700E4634F /* WMLoopView.m in Sources */,

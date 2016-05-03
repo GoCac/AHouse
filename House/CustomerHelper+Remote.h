@@ -10,4 +10,5 @@
 
 @interface CustomerHelper (Remote)
 + (void)fetchCustomers:(void(^)(NSArray *models))success fail:(void(^)(NSString *msg))fail;
++ (void)fetchHouseHelpers:(void(^)(NSArray *models))success fail:(void(^)(NSString *msg))fail;
 @end

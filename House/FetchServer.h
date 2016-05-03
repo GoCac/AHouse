@@ -16,8 +16,7 @@ typedef void (^errorBlock)();
 
 @interface FetchServer : NSObject
 + (void)postModelsFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelsBlock)success failure:(failureBlock)failure error:(errorBlock)error;
-+ (void)postModelFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelsBlock)success failure:(failureBlock)failure error:(errorBlock)error;
-+ (void)getModelsFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelBlock)success failure:(failureBlock)failure error:(errorBlock)error;
++ (void)postModelFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelBlock)success failure:(failureBlock)failure error:(errorBlock)error;
 + (void)getModelFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelBlock)success failure:(failureBlock)failure error:(errorBlock)error;
-//+ (void)testBlock:(BOOL (^)(NSString *name, NSString *psw))info;
++ (void)getModelsFromUrl:(NSString *)url params:(NSDictionary *)params mClass:(Class)mClass success:(successModelsBlock)success failure:(failureBlock)failure error:(errorBlock)error;
 @end

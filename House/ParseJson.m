@@ -12,6 +12,7 @@
 #import "CustomerHelper.h"
 #import "objc/runtime.h"
 #import "NSDictionary+Validation.h"
+#import "Househelpers.h"
 
 #define ID_LOWER_CASE @"id"
 #define ID_UPPER_CASE [ID_LOWER_CASE uppercaseString]
@@ -34,7 +35,7 @@
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[array count]];
     NSSet *sets = [ParseJson getIvarsFromClass:mClass];
     for (NSDictionary *dic in array) {
-        [result addObject:[ParseJson parseJsonObject:dic mClass:mClass sets:sets]];
+        [result addObject:[ParseJson parseJsonObj:dic mClass:mClass sets:sets]];
     }
     return result;
 }
@@ -68,23 +69,23 @@
     return dic;
 }
 
-+ (NSObject *)parseJsonObject:(NSDictionary *)dic mClass:(Class)mClass {
++ (id)parseJsonObj:(NSDictionary *)dic mClass:(Class)mClass {
     NSSet *sets = [ParseJson getIvarsFromClass:mClass];
-    return [ParseJson parseJsonObject:dic mClass:mClass sets:sets];
+    return [ParseJson parseJsonObj:dic mClass:mClass sets:sets];
 }
 
-+ (NSObject *)parseJsonObject:(NSDictionary *)dic mClass:(Class)mClass sets:(NSSet *)sets {
++ (id)parseJsonObj:(NSDictionary *)dic mClass:(Class)mClass sets:(NSSet *)sets {
     NSObject *result = [[mClass alloc] init];
     NSDictionary *params = [ParseJson ivarsDicParams];
     NSDictionary *customerClasses = [ParseJson customerClasses];
     [dic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         NSString *keyStr = (NSString *)key;
-        if ([sets containsObject:keyStr]) {
+        if([customerClasses isValidationKey:keyStr]) {
+            [result setValue:[ParseJson parseJsonObj:obj mClass:[customerClasses objectForKey:keyStr]] forKey:keyStr];
+        } else if ([sets containsObject:keyStr]) {
             [result setValue:obj forKey:keyStr];
         } else if ([params isValidationKey:keyStr]) {
             [result setValue:obj forKey:params[keyStr]];
-        } else if([customerClasses isValidationKey:keyStr]) {
-            [result setValue:[ParseJson parseJsonObject:obj mClass:[customerClasses objectForKey:keyStr]] forKey:keyStr];
         }
     }];
     return result;
@@ -106,32 +107,18 @@
     return sets;
 }
 
-+ (NSDictionary *)getIvarsDicFromClass:(Class)mClass {
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    Class currentClass = mClass;
-    while (currentClass != [NSObject class]) {
-        
-    }
-    return dic;
-}
-
-+ (NSArray *)parseHousesJson:(NSArray *)array {
++ (NSArray *)parseHouseHelpers:(NSArray *)array {
     NSMutableArray *result = [[NSMutableArray alloc] init];
-    for (NSDictionary *dic in array) {
-        NSUInteger ID = [dic[@"id"] intValue];
-        NSString *url = [NSString stringWithFormat:@"%@", dic[@"url"]];
-        NSString *name = [NSString stringWithFormat:@"%@", dic[@"name"]];
-        NSString *intro = [NSString stringWithFormat:@"%@", dic[@"intro"]];
-        NSString *phone = [NSString stringWithFormat:@"%@", dic[@"phone"]];
-        NSNumber *lat = [NSNumber numberWithDouble:[dic[@"lat"] doubleValue]];
-        NSNumber *lng = [NSNumber numberWithDouble:[dic[@"lng"] doubleValue]];
-        [result addObject:[[House alloc] initWithID:ID url:url name:name intro:intro phone:phone lat:lat lng:lng]];
+    for (NSDictionary *item in array) {
+        NSInteger ID = [item[@"id"] integerValue];
+        NSString *name = item[@"name"];
+        NSArray *helpers = [ParseJson parseJsonArray:item[@"helpers"] mClass:[CustomerHelper class]];
+        Househelpers *hh = [[Househelpers alloc] initWithID:ID];
+        [hh setName:name];
+        [hh setHelpers:helpers];
+        [result addObject:hh];
     }
     return result;
-}
-
-+ (NSInteger)add:(NSInteger)A AndB:(NSInteger)B {
-    return A + B;
 }
 
 @end

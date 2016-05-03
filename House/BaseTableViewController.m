@@ -91,18 +91,19 @@
 }
 
 - (void)refreshViewWithModels:(NSArray *)result isRefresh:(BOOL)isRefresh {
-    if ([result count] > 0) {
-        if (isRefresh) {
-            [self.datas removeAllObjects];
-            self.isOver = NO;
-        } else {
-            if ([result count] < self.pageSize) {
-                self.isOver = YES;
-            }
-        }
-        [self.datas addObjectsFromArray:result];
-        [self.tableView reloadData];
+    if ([result count] == 0) {
+        return;
     }
+    if (isRefresh) {
+        [self.datas removeAllObjects];
+        self.isOver = NO;
+    } else {
+        if ([result count] < self.pageSize) {
+            self.isOver = YES;
+        }
+    }
+    [self.datas addObjectsFromArray:result];
+    [self.tableView reloadData];
     [self resetTableView];
     if (isRefresh) {
         [SaveModelUtils saveBaseModels:result cls:[self getModelClass]];

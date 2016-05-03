@@ -15,8 +15,8 @@
 
 #define JC_DEBUG 1
 #define PRODUCT 0
-#define SERVER_URL @"http://202.118.67.200:10717/house/web/index.php?r="
-#define IMAGE_SERVER_THUMBNAIL_URL @"http://202.118.67.200:10717/house/images_mobile/"
+#define SERVER_URL @"http://218.24.163.140:808/house/web/index.php?r="
+#define IMAGE_SERVER_THUMBNAIL_URL @"http://218.24.163.140:808/house/images_mobile/"
 #define IMAGE_SERVER_ORIGIN_URL @"http://202.118.67.200:10717/house/images/"
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
@@ -38,6 +38,9 @@
 #define HELPER_URL @"helper/helpers"
 #define HELPER_SERVER_URL [SERVER_URL stringByAppendingString:HELPER_URL]
 #define FEADBACK_URL [SERVER_URL stringByAppendingString:@"feedback/feedbacks"]
+
+#define HELPERS_URL @"house/househelpers"
+#define HELPERS_SERVER_URL [SERVER_URL stringByAppendingString:HELPERS_URL]
 
 #define ERROR_MESSAGE @"网络加载失败，请重新尝试！"
 #define FAILURE_MESSAGE @"网络请求有误，请重新尝试！"

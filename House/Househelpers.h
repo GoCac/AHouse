@@ -9,5 +9,6 @@
 #import "BaseModel.h"
 
 @interface Househelpers : BaseModel
-
+@property(nonatomic, strong) NSString *name;
+@property(nonatomic, copy) NSArray *helpers;
 @end

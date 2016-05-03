@@ -15,6 +15,8 @@
 #import "AppDelegate.h"
 #import "ServerUtils.h"
 #import "Slideshow.h"
+#import "CustomerHelper+Remote.h"
+#import "Househelpers.h"
 
 #define PAGE_SIZE_NEWS 8
 
@@ -42,7 +44,7 @@
     if (PRODUCT) {
         self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES images:images timeInterval:3.0f];
         for (NSUInteger i = 0; i < 20; i++) {
-            [self.datas addObject:[[News alloc] initWithID:i picUrl:PLACE_HOLDER_IAMGE_URL title:@"北京的房价涨了，哈哈哈哈哈哈哈哈哈哈哈哈哈哈,hahhahahahahhahah" author:@"楠楠" time:@"2015/11/07"]];
+            [self.datas addObject:[[News alloc] initWithID:i picUrl:PLACE_HOLDER_IAMGE_URL title:@"北京的房价涨了，哈哈" author:@"楠楠" time:@"2015/11/07"]];
         }
     } else {
         self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES timeInterval:3.0f];
@@ -50,16 +52,21 @@
         [self fetchModelsFromServerRefresh:YES];
         [self fetchSlideshows];
     }
-//    [self.circleView setCircleViewClickBlock:^(CircleView *circleView, NSUInteger index) {
-//        if (JC_DEBUG) {
-//            NSLog(@"You clicked index %lu by block.", index);
-//        }
-//    }];
     [self.circleView setDelegate:self];
     [self.tableView setTableHeaderView:self.circleView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkState:) name:kReachabilityChangedNotification object:nil];
     self.netConn = [Reachability reachabilityForInternetConnection];
     [self.netConn startNotifier];
+    [CustomerHelper fetchHouseHelpers:^(NSArray *models) {
+        NSLog(@"count is %ld", [models count]);
+        NSLog(@"models is %@", models);
+        for (BaseModel *model in models) {
+            Househelpers *helper = (Househelpers *)model;
+            NSLog(@"name is %@, id is %ld, count is %ld", helper.name, helper.ID, [helper.helpers count]);
+        }
+    } fail:^(NSString *msg) {
+        NSLog(@"house helpers error is %@", msg);
+    }];
 }
 
 - (void)dealloc {
@@ -87,7 +94,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationItem setTitle:@"hello world"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,9 +102,7 @@
 }
 
 - (void)circleViewDidSelectImage:(CircleView *)circleView atIndex:(NSUInteger)index {
-    if (PRODUCT) {
-        NSLog(@"You clicked index %ld by delegate.", index);
-    } else if(nil != self.slides && [self.slides count] > 0) {
+    if(nil != self.slides && [self.slides count] > 0) {
         NSUInteger ID = [[self.slides objectAtIndex:index] ID];
         NSString *slideUrl = [SLIDE_MOBILE_URL stringByAppendingString:[NSString stringWithFormat:@"%lu", ID]];
         WebViewController *webViewController = [[WebViewController alloc] init];
@@ -115,7 +119,7 @@
 - (void)fetchSlideshows {
     NSDictionary *params = @{@"pageSize" : @"3"};
     [FetchServer postModelsFromUrl:_slideUrl params:params mClass:[Slideshow class] success:^(NSArray *models) {
-        if (nil != models && [models count] > 0) {
+        if ([models count] > 0) {
             [self handleSlideshows:models];
             [SaveModelUtils saveBaseModels:models cls:[Slideshow class]];
         }
@@ -138,7 +142,7 @@
 - (void)loadLocalData {
     [super loadLocalData];
     self.slides = [SaveModelUtils getBaseModels:[Slideshow class]];
-    if (nil != self.slides && [self.slides count] > 0) {
+    if ([self.slides count] > 0) {
         [self handleSlideshows:self.slides];
     }
 }

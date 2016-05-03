@@ -40,8 +40,7 @@
 }
 
 - (void)testAdd {
-    NSInteger result = [ParseJson add:10 AndB:20];
-    NSAssert(result == 30, @"result should be 30");
+
 }
 
 - (void)testParseLabelContent {

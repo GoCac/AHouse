@@ -14,7 +14,7 @@
     NSInteger code = [response[CODE] integerValue];
     [result setCode:code];
     [result setSuccess:(CODE_SUCCESS == code)];
-    [result setArray:response[RESULT]];
+    [result setMArray:(NSArray *)(response[RESULT])];
     return result;
 }
 

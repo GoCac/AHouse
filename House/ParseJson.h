@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class BaseModel;
 @interface ParseJson : NSObject
-+ (NSArray *)parseNewsJson:(NSArray *)array;
-+ (NSArray *)parseHousesJson:(NSArray *)array;
-+ (NSArray *)parseJsonArray:(NSArray *)arrar mClass:(Class)mClass;
-+ (NSInteger)add:(NSInteger)A AndB:(NSInteger)B;
++ (NSArray *)parseJsonArray:(NSArray *)array mClass:(Class)mClass;
++ (id)parseJsonObj:(NSDictionary *)dic mClass:(Class)mClass;
++ (NSArray *)parseHouseHelpers:(NSArray *)array;
 @end
