@@ -7,7 +7,7 @@
 //
 
 #import "ALNewsCell.h"
-#import "UIImageView+PINRemoteImage.h"
+#import "PINImageView+PINRemoteImage.h"
 #import "News.h"
 #import "View+MASAdditions.h"
 #import "UILabel+ContentSize.h"

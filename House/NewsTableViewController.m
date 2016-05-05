@@ -57,6 +57,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkState:) name:kReachabilityChangedNotification object:nil];
     self.netConn = [Reachability reachabilityForInternetConnection];
     [self.netConn startNotifier];
+    /*
     [CustomerHelper fetchHouseHelpers:^(NSArray *models) {
         NSLog(@"count is %ld", [models count]);
         NSLog(@"models is %@", models);
@@ -66,6 +67,14 @@
         }
     } fail:^(NSString *msg) {
         NSLog(@"house helpers error is %@", msg);
+    }];
+     */
+    [CustomerHelper fetchCustomers:^(NSArray *models) {
+        for (CustomerHelper *helper in models) {
+            NSLog(@"helper name is %@, id is %ld, hxID is %@", helper.name, helper.ID, helper.hxID);
+        }
+    } fail:^(NSString *msg) {
+        NSLog(@"error msg is %@", msg);
     }];
 }
 

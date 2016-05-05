@@ -1,1 +1,0 @@
-PODS_HOUSETESTS_PINREMOTEIMAGE_OTHER_LDFLAGS = -framework "CoreImage" -framework "ImageIO" -framework "UIKit"

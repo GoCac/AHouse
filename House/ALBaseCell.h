@@ -6,7 +6,7 @@
 //  Copyright © 2015年 dlut. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "UIImageView+PINRemoteImage.h"
+#import "PINImageView+PINRemoteImage.h"
 
 @class BaseModel;
 @interface ALBaseCell : UITableViewCell

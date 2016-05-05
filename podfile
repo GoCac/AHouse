@@ -5,6 +5,7 @@ pod "MJRefresh", "~> 2.4"
 pod "PINRemoteImage"
 pod "AsyncDisplayKit"
 pod "Masonry"
+pod "HyphenateSDK"
 
 target 'House' do
 

@@ -8,7 +8,7 @@
 
 #import "CircleView.h"
 #import "JCPrefixHeader.pch"
-#import "UIImageView+PINRemoteImage.h"
+#import "PINImageView+PINRemoteImage.h"
 
 @interface CircleView () <UIScrollViewDelegate>
 @property(nonatomic, assign) BOOL isLocalRes;
