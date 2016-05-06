@@ -12,6 +12,7 @@
 @property(nonatomic, copy) NSString *picUrl;
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic, copy) NSString *time;
+@property(nonatomic, assign) NSString* isTop;
 
 - (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title time:(NSString *)time;
 

@@ -10,15 +10,13 @@
 
 @implementation StringUtils
 + (Boolean)isEmpty:(NSString *)str {
-    if (nil == str || [str isEqualToString:@""]) {
-        return true;
-    }
+    return [[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] > 0;
     return false;
 }
-+ (NSArray *)parseLabelContent:(NSString *)labelContent {
-    if (nil != labelContent) {
++ (NSArray *)parseSemContent:(NSString *)semContent {
+    if (![StringUtils isEmpty:semContent]) {
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:2];
-        NSArray *result = [labelContent componentsSeparatedByString:@";"];
+        NSArray *result = [semContent componentsSeparatedByString:@";"];
         NSUInteger num = [result count];
         if (num > 0) {
             [array addObject:[result objectAtIndex:0]];

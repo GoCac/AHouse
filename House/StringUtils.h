@@ -10,5 +10,5 @@
 
 @interface StringUtils : NSObject
 + (Boolean)isEmpty:(NSString *)str;
-+ (NSArray *)parseLabelContent:(NSString *)labelContent;
++ (NSArray *)parseSemContent:(NSString *)semContent;
 @end

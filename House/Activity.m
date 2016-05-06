@@ -24,6 +24,7 @@
     [aCoder encodeObject:self.picUrl forKey:@"picUrl"];
     [aCoder encodeObject:self.title forKey:@"title"];
     [aCoder encodeObject:self.time forKey:@"time"];
+    [aCoder encodeObject:self.isTop forKey:@"isTop"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -31,6 +32,7 @@
         self.picUrl = [aDecoder decodeObjectForKey:@"picUrl"];
         self.title = [aDecoder decodeObjectForKey:@"title"];
         self.time = [aDecoder decodeObjectForKey:@"time"];
+        self.isTop = [aDecoder decodeObjectForKey:@"isTop"];
     }
     return self;
 }

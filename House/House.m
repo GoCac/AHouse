@@ -30,26 +30,24 @@
     return self;
 }
 
-- (void)parseLabelContent {
-    if (nil != self.labelContent) {
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:2];
-        NSArray *result = [self.labelContent componentsSeparatedByString:@";"];
-        NSUInteger num = [result count];
-        if (num > 0) {
-            [array addObject:[result objectAtIndex:0]];
-        }
-        NSMutableString *mStr = [[NSMutableString alloc] init];
-        for (NSUInteger i = 1; i < num; i++) {
-            [mStr appendString:[result objectAtIndex:i]];
-        }
-        [array addObject:mStr];
-        _labelResult = array;
-    }
-}
+//- (void)parseLabelContent {
+//    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:2];
+//    NSArray *result = [self.labelContent componentsSeparatedByString:@";"];
+//    NSUInteger num = [result count];
+//    if (num > 0) {
+//        [array addObject:[result objectAtIndex:0]];
+//    }
+//    NSMutableString *mStr = [[NSMutableString alloc] init];
+//    for (NSUInteger i = 1; i < num; i++) {
+//        [mStr appendString:[result objectAtIndex:i]];
+//    }
+//    [array addObject:mStr];
+//    _labelResult = array;
+//}
 
 - (NSArray *)labelResult {
     if (nil == _labelResult) {
-        [self parseLabelContent];
+        _labelResult = [StringUtils parseSemContent:self.labelContent];
     }
     return _labelResult;
 }

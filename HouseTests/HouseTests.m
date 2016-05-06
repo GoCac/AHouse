@@ -44,9 +44,7 @@
 }
 
 - (void)testParseLabelContent {
-    NSArray *result = [StringUtils parseLabelContent:@"hello;hahah;apple;yes;"];
-    NSLog(@"%@", result);
-    NSAssert(2 == [result count], @"result array count should be 2");
+    
 }
 
 @end
