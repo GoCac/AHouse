@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JCPrefixHeader.pch"
 
 @interface StringUtils : NSObject
 + (Boolean)isEmpty:(NSString *)str;
 + (NSArray *)parseSemContent:(NSString *)semContent;
++ (NSArray *)parseLabelContent:(NSString *)labelContent;
++ (NSString *)originImageUrl:(NSString *)url;
++ (NSArray *)parseImageOriginUrls:(NSString *)url;
 @end

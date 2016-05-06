@@ -37,4 +37,8 @@
     return self;
 }
 
+- (BOOL)isFirst {
+    return 1 == [self.isTop integerValue];
+}
+
 @end

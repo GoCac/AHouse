@@ -15,8 +15,22 @@
 }
 + (NSArray *)parseSemContent:(NSString *)semContent {
     if (![StringUtils isEmpty:semContent]) {
+        NSMutableCharacterSet *set = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+        [set addCharactersInString:@";"];
+        NSString *segTem = [semContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSArray *result = [segTem componentsSeparatedByString:@";"];
+        return result;
+    }
+    return nil;
+}
+
++ (NSArray *)parseLabelContent:(NSString *)labelContent {
+    if (![StringUtils isEmpty:labelContent]) {
+        NSMutableCharacterSet *set = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+        [set addCharactersInString:@";"];
+        NSString *labelTem = [labelContent stringByTrimmingCharactersInSet:set];
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:2];
-        NSArray *result = [semContent componentsSeparatedByString:@";"];
+        NSArray *result = [labelTem componentsSeparatedByString:@";"];
         NSUInteger num = [result count];
         if (num > 0) {
             [array addObject:[result objectAtIndex:0]];
@@ -31,4 +45,17 @@
     }
     return nil;
 }
+
++ (NSString *)originImageUrl:(NSString *)url {
+    return [IMAGE_SERVER_ORIGIN_URL stringByAppendingString:url];
+}
+
++ (NSArray *)parseImageOriginUrls:(NSString *)url {
+    if (![StringUtils isEmpty:url]) {
+        NSMutableCharacterSet *set = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+        [set addCharactersInString:@";"];
+    }
+    return nil;
+}
+
 @end

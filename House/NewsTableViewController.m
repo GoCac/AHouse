@@ -69,13 +69,13 @@
         NSLog(@"house helpers error is %@", msg);
     }];
      */
-    [CustomerHelper fetchCustomers:^(NSArray *models) {
-        for (CustomerHelper *helper in models) {
-            NSLog(@"helper name is %@, id is %ld, hxID is %@", helper.name, helper.ID, helper.hxID);
-        }
-    } fail:^(NSString *msg) {
-        NSLog(@"error msg is %@", msg);
-    }];
+//    [CustomerHelper fetchCustomers:^(NSArray *models) {
+//        for (CustomerHelper *helper in models) {
+//            NSLog(@"helper name is %@, id is %ld, hxID is %@", helper.name, helper.ID, helper.hxID);
+//        }
+//    } fail:^(NSString *msg) {
+//        NSLog(@"error msg is %@", msg);
+//    }];
 }
 
 - (void)dealloc {

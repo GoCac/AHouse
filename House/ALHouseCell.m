@@ -122,6 +122,11 @@
     [self.intro setText:house.intro];
     [self.intro setBackgroundColor:[UIColor orangeColor]];
     [self.phone setText:house.phone];
+    NSLog(@"url is %@", house.url);
+    NSLog(@"hxUrl is %@", house.hxUrl);
+    NSLog(@"videoUrl is %@", house.videoUrl);
+    NSLog(@"otherUrl is %@", house.otherUrl);
+    NSLog(@"circleUrl is %@", house.circleUrl);
 }
 
 + (CGFloat)height {
