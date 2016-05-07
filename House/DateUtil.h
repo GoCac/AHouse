@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface DateUtil : NSObject
-
++ (NSString *)convertTimeStampToString:(double)timeStamp;
 @end

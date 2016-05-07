@@ -75,6 +75,7 @@
 		BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */; };
 		BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */; };
 		BBE129FB1CD8A8AD00968A4B /* Househelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE129FA1CD8A8AD00968A4B /* Househelpers.m */; };
+		BBE57B471CDDD71A0050A019 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE57B461CDDD71A0050A019 /* DateUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +218,8 @@
 		BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerObjResult.m; sourceTree = "<group>"; };
 		BBE129F91CD8A8AD00968A4B /* Househelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Househelpers.h; sourceTree = "<group>"; };
 		BBE129FA1CD8A8AD00968A4B /* Househelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Househelpers.m; sourceTree = "<group>"; };
+		BBE57B451CDDD71A0050A019 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		BBE57B461CDDD71A0050A019 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		CDD2CFB3A835B7CBD32A1C7D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -433,6 +436,8 @@
 				BBB1F4651C436C8000709674 /* StringUtils.m */,
 				BBB1F4671C4E201100709674 /* SaveModelUtils.h */,
 				BBB1F4681C4E201100709674 /* SaveModelUtils.m */,
+				BBE57B451CDDD71A0050A019 /* DateUtil.h */,
+				BBE57B461CDDD71A0050A019 /* DateUtil.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -764,6 +769,7 @@
 				BBB1F4661C436C8000709674 /* StringUtils.m in Sources */,
 				BB7B86651C92825B00C961C4 /* CircleTextView.m in Sources */,
 				BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */,
+				BBE57B471CDDD71A0050A019 /* DateUtil.m in Sources */,
 				BBB1F4601C3BBE7A00709674 /* Slideshow.m in Sources */,
 				BB7F518F1C049F3000E4634F /* ParseJson.m in Sources */,
 				BB7F51C01C088CE800E4634F /* FeedbackViewController.m in Sources */,

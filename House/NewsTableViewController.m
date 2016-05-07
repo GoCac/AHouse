@@ -17,6 +17,7 @@
 #import "Slideshow.h"
 #import "CustomerHelper+Remote.h"
 #import "Househelpers.h"
+#import "StringUtils.h"
 
 #define PAGE_SIZE_NEWS 8
 
@@ -76,6 +77,16 @@
 //    } fail:^(NSString *msg) {
 //        NSLog(@"error msg is %@", msg);
 //    }];
+    NSString *test = @"  hello;world;haha;  ";
+    NSMutableCharacterSet *set = [NSMutableCharacterSet whitespaceCharacterSet];
+    [set addCharactersInString:@";"];
+    NSString *tem = [test stringByTrimmingCharactersInSet:set];
+    NSArray *array = [StringUtils parseSemContent:test];
+    NSLog(@"tem string is %@, array is %@", tem, array);
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:12345677890];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    NSLog(@"date is %@", [dateFormat stringFromDate:date]);
 }
 
 - (void)dealloc {

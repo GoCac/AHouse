@@ -40,7 +40,7 @@
 }
 
 - (void)testAdd {
-
+    
 }
 
 - (void)testParseLabelContent {
