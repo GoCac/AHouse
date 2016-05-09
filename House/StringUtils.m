@@ -10,25 +10,54 @@
 
 @implementation StringUtils
 + (Boolean)isEmpty:(NSString *)str {
-    return [[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] > 0;
-    return false;
+    return [[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] <= 0;
 }
 + (NSArray *)parseSemContent:(NSString *)semContent {
     if (![StringUtils isEmpty:semContent]) {
+        NSMutableCharacterSet *set = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+        [set addCharactersInString:@";"];
+        NSString *segTem = [semContent stringByTrimmingCharactersInSet:set];
+        NSArray *result = [segTem componentsSeparatedByString:@";"];
+        return result;
+    }
+    return nil;
+}
+
++ (NSArray *)parseLabelContent:(NSString *)labelContent {
+    if (![StringUtils isEmpty:labelContent]) {
+        NSMutableCharacterSet *set = [NSMutableCharacterSet whitespaceCharacterSet];
+        [set addCharactersInString:@";"];
+        NSString *labelTem = [labelContent stringByTrimmingCharactersInSet:set];
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:2];
-        NSArray *result = [semContent componentsSeparatedByString:@";"];
+        NSArray *result = [labelTem componentsSeparatedByString:@";"];
+        NSLog(@"result is %@", result);
         NSUInteger num = [result count];
         if (num > 0) {
             [array addObject:[result objectAtIndex:0]];
         }
-        NSMutableString *mStr = [[NSMutableString alloc] init];
-        for (NSUInteger i = 1; i < num; i++) {
-            [mStr appendString:[result objectAtIndex:i]];
-            [mStr appendString:@"\t"];
+        if (num > 1) {
+            NSMutableString *mStr = [[NSMutableString alloc] init];
+            for (NSUInteger i = 1; i < num; i++) {
+                [mStr appendString:[result objectAtIndex:i]];
+                [mStr appendString:@"  "];
+            }
+            [array addObject:mStr];
         }
-        [array addObject:mStr];
         return array;
     }
     return nil;
 }
+
++ (NSString *)originImageUrl:(NSString *)url {
+    return [IMAGE_SERVER_ORIGIN_URL stringByAppendingString:url];
+}
+
++ (NSArray *)parseImageOriginUrls:(NSString *)url {
+    if (![StringUtils isEmpty:url]) {
+        NSMutableCharacterSet *set = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+        [set addCharactersInString:@";"];
+    }
+    return nil;
+}
+
 @end

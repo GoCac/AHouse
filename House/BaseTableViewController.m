@@ -110,7 +110,7 @@
     }
 }
 
-- (NSMutableDictionary *)getParams:(BOOL)isRefresh {
+- (NSDictionary *)getParams:(BOOL)isRefresh {
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:[NSNumber numberWithInteger:self.pageSize] forKey:@"pageSize"];
     if (!isRefresh) {

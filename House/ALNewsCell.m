@@ -18,7 +18,7 @@
 #define kNewsPaddingTopAndBottom 3
 #define kNewsWidthAndHeightRate 1.618
 #define NEWS_FONT_NAME @"Avenir-Book"
-#define NEWS_FONT_NAME_SIZE 18.0f
+#define NEWS_FONT_NAME_SIZE 17.0f
 #define NEWS_FONT_AUTHOR_SIZE 15.0f
 #define NEWS_FONT_DATE_SIZE 15.0f
 

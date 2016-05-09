@@ -11,9 +11,11 @@
 @interface Activity : BaseModel
 @property(nonatomic, copy) NSString *picUrl;
 @property(nonatomic, copy) NSString *title;
+@property(nonatomic, assign) NSNumber *postTime;
 @property(nonatomic, copy) NSString *time;
 @property(nonatomic, assign) NSString* isTop;
+@property(nonatomic, assign, readonly) BOOL isFirst;
 
-- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title time:(NSString *)time;
+- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title time:(NSNumber *)postTime;
 
 @end

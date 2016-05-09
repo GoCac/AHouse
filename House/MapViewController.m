@@ -44,8 +44,16 @@
 }
 
 - (QAnnotationView *)mapView:(QMapView *)mapView viewForAnnotation:(id<QAnnotation>)annotation {
-    QPinAnnotationView *annotationView = [[QPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"ANNOTATION"];
+    static NSString *reuseIdentifier = @"JC_ANNOTATION";
+    QPinAnnotationView *annotationView = (QPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+    if (nil == annotationView) {
+        annotationView = [[QPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    }
     [annotationView setTintColor:[UIColor greenColor]];
+    [annotationView setAnimatesDrop:YES];
+    [annotationView setDraggable:NO];
+    [annotationView setCanShowCallout:YES];
+    [annotationView setHidden:NO];
     return annotationView;
 }
 

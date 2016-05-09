@@ -7,14 +7,15 @@
 //
 
 #import "Activity.h"
+#import "DateUtil.h"
 
 @implementation Activity
 
-- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title time:(NSString *)time {
+- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title time:(NSNumber *)postTime {
     if(self = [super initWithID:ID]) {
         self.picUrl = picUrl;
         self.title = title;
-        self.time = time;
+        self.postTime = postTime;
     }
     return self;
 }
@@ -23,7 +24,7 @@
     [super encodeWithCoder:aCoder];
     [aCoder encodeObject:self.picUrl forKey:@"picUrl"];
     [aCoder encodeObject:self.title forKey:@"title"];
-    [aCoder encodeObject:self.time forKey:@"time"];
+    [aCoder encodeObject:self.postTime forKey:@"postTime"];
     [aCoder encodeObject:self.isTop forKey:@"isTop"];
 }
 
@@ -31,10 +32,21 @@
     if (self = [super initWithCoder:aDecoder]) {
         self.picUrl = [aDecoder decodeObjectForKey:@"picUrl"];
         self.title = [aDecoder decodeObjectForKey:@"title"];
-        self.time = [aDecoder decodeObjectForKey:@"time"];
+        self.postTime = [aDecoder decodeObjectForKey:@"postTime"];
         self.isTop = [aDecoder decodeObjectForKey:@"isTop"];
     }
     return self;
+}
+
+- (BOOL)isFirst {
+    return 1 == [self.isTop integerValue];
+}
+
+- (NSString *)time {
+    if (nil == _time) {
+        _time = [DateUtil convertTimeStampToString:[self.postTime doubleValue]];
+    }
+    return _time;
 }
 
 @end

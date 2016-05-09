@@ -72,9 +72,12 @@
 		BBB1F4631C3E1A8700709674 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4621C3E1A8700709674 /* WebViewController.m */; };
 		BBB1F4661C436C8000709674 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4651C436C8000709674 /* StringUtils.m */; };
 		BBB1F4691C4E201100709674 /* SaveModelUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4681C4E201100709674 /* SaveModelUtils.m */; };
+		BBD8EAAB1CE07F9C0001369D /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD8EAAA1CE07F9C0001369D /* AboutUsViewController.m */; };
 		BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */; };
 		BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */; };
 		BBE129FB1CD8A8AD00968A4B /* Househelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE129FA1CD8A8AD00968A4B /* Househelpers.m */; };
+		BBE57B471CDDD71A0050A019 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE57B461CDDD71A0050A019 /* DateUtil.m */; };
+		BBE57B4A1CE0334A0050A019 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE57B491CE0334A0050A019 /* CircleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,12 +214,18 @@
 		BBB1F4651C436C8000709674 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
 		BBB1F4671C4E201100709674 /* SaveModelUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveModelUtils.h; sourceTree = "<group>"; };
 		BBB1F4681C4E201100709674 /* SaveModelUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveModelUtils.m; sourceTree = "<group>"; };
+		BBD8EAA91CE07F9C0001369D /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		BBD8EAAA1CE07F9C0001369D /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		BBDD44831CC0CED000B0CC55 /* ServerArrayResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerArrayResult.h; sourceTree = "<group>"; };
 		BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerArrayResult.m; sourceTree = "<group>"; };
 		BBDD44861CC0CF0C00B0CC55 /* ServerObjResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerObjResult.h; sourceTree = "<group>"; };
 		BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerObjResult.m; sourceTree = "<group>"; };
 		BBE129F91CD8A8AD00968A4B /* Househelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Househelpers.h; sourceTree = "<group>"; };
 		BBE129FA1CD8A8AD00968A4B /* Househelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Househelpers.m; sourceTree = "<group>"; };
+		BBE57B451CDDD71A0050A019 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
+		BBE57B461CDDD71A0050A019 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
+		BBE57B481CE0334A0050A019 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
+		BBE57B491CE0334A0050A019 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
 		CDD2CFB3A835B7CBD32A1C7D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,6 +360,10 @@
 				BBB1F4621C3E1A8700709674 /* WebViewController.m */,
 				BB1A1B101CBBC40500181CE0 /* MapViewController.h */,
 				BB1A1B111CBBC40500181CE0 /* MapViewController.m */,
+				BBE57B481CE0334A0050A019 /* CircleViewController.h */,
+				BBE57B491CE0334A0050A019 /* CircleViewController.m */,
+				BBD8EAA91CE07F9C0001369D /* AboutUsViewController.h */,
+				BBD8EAAA1CE07F9C0001369D /* AboutUsViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -433,6 +446,8 @@
 				BBB1F4651C436C8000709674 /* StringUtils.m */,
 				BBB1F4671C4E201100709674 /* SaveModelUtils.h */,
 				BBB1F4681C4E201100709674 /* SaveModelUtils.m */,
+				BBE57B451CDDD71A0050A019 /* DateUtil.h */,
+				BBE57B461CDDD71A0050A019 /* DateUtil.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -731,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD8EAAB1CE07F9C0001369D /* AboutUsViewController.m in Sources */,
 				BB2BACD01BEB47B500DB0FD8 /* News.m in Sources */,
 				BBE129FB1CD8A8AD00968A4B /* Househelpers.m in Sources */,
 				BB7F51921C0566A900E4634F /* HouseDetail.m in Sources */,
@@ -749,6 +765,7 @@
 				BBB1F44B1C1EC3E600709674 /* CommonEnums.m in Sources */,
 				BB2BAC9E1BE8E77100DB0FD8 /* AppDelegate.m in Sources */,
 				BBB1F45A1C33B4C100709674 /* TestViewController.m in Sources */,
+				BBE57B4A1CE0334A0050A019 /* CircleViewController.m in Sources */,
 				BB6206801C8EDE1D00F2D738 /* FetchServer.m in Sources */,
 				BB7F51851C033B8800E4634F /* ALHouseCell.m in Sources */,
 				BB7F51B91C084EBF00E4634F /* Reachability.m in Sources */,
@@ -764,6 +781,7 @@
 				BBB1F4661C436C8000709674 /* StringUtils.m in Sources */,
 				BB7B86651C92825B00C961C4 /* CircleTextView.m in Sources */,
 				BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */,
+				BBE57B471CDDD71A0050A019 /* DateUtil.m in Sources */,
 				BBB1F4601C3BBE7A00709674 /* Slideshow.m in Sources */,
 				BB7F518F1C049F3000E4634F /* ParseJson.m in Sources */,
 				BB7F51C01C088CE800E4634F /* FeedbackViewController.m in Sources */,

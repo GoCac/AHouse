@@ -29,7 +29,7 @@
 - (void)fetchModelsFromServerRefresh:(BOOL)isRefresh;
 - (void)handleCode:(NSInteger)code;
 - (void)handleFailure;
-- (NSMutableDictionary *)getParams:(BOOL)isRefresh;
+- (NSDictionary *)getParams:(BOOL)isRefresh;
 - (Class)getModelClass;
 - (void)loadLocalData;
 - (void)resetTableView;

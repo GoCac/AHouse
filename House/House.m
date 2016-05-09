@@ -30,31 +30,48 @@
     return self;
 }
 
-//- (void)parseLabelContent {
-//    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:2];
-//    NSArray *result = [self.labelContent componentsSeparatedByString:@";"];
-//    NSUInteger num = [result count];
-//    if (num > 0) {
-//        [array addObject:[result objectAtIndex:0]];
-//    }
-//    NSMutableString *mStr = [[NSMutableString alloc] init];
-//    for (NSUInteger i = 1; i < num; i++) {
-//        [mStr appendString:[result objectAtIndex:i]];
-//    }
-//    [array addObject:mStr];
-//    _labelResult = array;
-//}
-
 - (NSArray *)labelResult {
     if (nil == _labelResult) {
-        _labelResult = [StringUtils parseSemContent:self.labelContent];
+        _labelResult = [StringUtils parseLabelContent:self.labelContent];
     }
     return _labelResult;
+}
+
+- (NSArray *)circleUrls {
+    if (nil == _circleUrls) {
+        _circleUrls = [StringUtils parseSemContent:self.circleUrl];
+    }
+    return _circleUrls;
+}
+
+- (NSArray *)imageUrls {
+    if (nil == _imageUrls) {
+        NSMutableArray *result = [[NSMutableArray alloc] init];
+        if (![StringUtils isEmpty:self.url]) {
+            [result addObject:[StringUtils originImageUrl:self.url]];
+        }
+        if (![StringUtils isEmpty:self.hxUrl]) {
+            [result addObject:[StringUtils originImageUrl:self.hxUrl]];
+        }
+        if (![StringUtils isEmpty:self.otherUrl]) {
+            NSArray *others = [StringUtils parseSemContent:self.otherUrl];
+            for (NSString *item in others) {
+                [result addObject:[StringUtils originImageUrl:item]];
+            }
+        }
+        _imageUrls = result;
+        return _imageUrls;
+    }
+    return nil;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [super encodeWithCoder:aCoder];
     [aCoder encodeObject:self.url forKey:@"url"];
+    [aCoder encodeObject:self.hxUrl forKey:@"hxUrl"];
+    [aCoder encodeObject:self.videoUrl forKey:@"videoUrl"];
+    [aCoder encodeObject:self.otherUrl forKey:@"otherUrl"];
+    [aCoder encodeObject:self.circleUrl forKey:@"circleUrl"];
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.intro forKey:@"intro"];
     [aCoder encodeObject:self.phone forKey:@"phone"];
@@ -67,6 +84,10 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         self.url = [aDecoder decodeObjectForKey:@"url"];
+        self.hxUrl = [aDecoder decodeObjectForKey:@"hxUrl"];
+        self.videoUrl = [aDecoder decodeObjectForKey:@"videoUrl"];
+        self.otherUrl = [aDecoder decodeObjectForKey:@"otherUrl"];
+        self.circleUrl = [aDecoder decodeObjectForKey:@"circleUrl"];
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.intro = [aDecoder decodeObjectForKey:@"intro"];
         self.phone = [aDecoder decodeObjectForKey:@"phone"];

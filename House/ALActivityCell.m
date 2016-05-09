@@ -90,6 +90,9 @@
         
     }
     [self.time setText:activity.time];
+    if ([activity isFirst]) {
+        NSLog(@"This cell is first.");
+    }
 }
 
 + (CGFloat)height {

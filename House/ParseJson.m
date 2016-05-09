@@ -117,9 +117,9 @@
         [hh setName:name];
         [hh setHelpers:helpers];
         [result addObject:hh];
-        for (CustomerHelper *helper in helpers) {
-            NSLog(@"customer helper name is %@, id is %ld, hxID is %@", helper.name, helper.ID, helper.hxID);
-        }
+//        for (CustomerHelper *helper in helpers) {
+//            NSLog(@"customer helper name is %@, id is %ld, hxID is %@", helper.name, helper.ID, helper.hxID);
+//        }
     }
     return result;
 }

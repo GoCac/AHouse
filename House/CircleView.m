@@ -129,6 +129,7 @@
         } else {
             [imageView pin_setImageFromURL:[NSURL URLWithString:[IMAGE_SERVER_ORIGIN_URL stringByAppendingString:self.imageUrls[i % (self.num)]]]];
         }
+//        [imageView setContentMode:UIViewContentModeLeft];
         [self.scrollView addSubview:imageView];
     }
 }

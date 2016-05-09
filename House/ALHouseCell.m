@@ -16,9 +16,10 @@
 #define kPaddingTopAndBottom 3
 #define kWidthAndHeightRate 1.618
 #define FONT_NAME @"Avenir-Book"
-#define FONT_NAME_SIZE 18.0f
-#define FONT_INTRO_SIZE 16.0f
-#define FONT_PHONE_SIZE 17.0f
+#define FONT_NAME_SIZE 17.0f
+#define FONT_INTRO_SIZE 15.0f
+#define FONT_PHONE_SIZE 16.0f
+#define FONT_LABEL_SIZE 12.0f
 #define kRatingViewHeight 10
 #define kRatingViewSpacing 2
 #define kPaddingLabelAndPhoneSpacing 3
@@ -60,15 +61,15 @@
         [self.labelFirst setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.labelFirst setLineBreakMode:NSLineBreakByWordWrapping];
         [self.labelFirst setNumberOfLines:0];
-        [self.labelFirst setFont:fontName];
+        [self.labelFirst setFont:fontIntro];
         [self.contentView addSubview:self.labelFirst];
         
+        UIFont *fontLabel = [UIFont fontWithName:FONT_NAME size:FONT_LABEL_SIZE];
         self.labelOthers = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.labelOthers setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.labelOthers setLineBreakMode:NSLineBreakByWordWrapping];
-        [self.labelOthers setFont:fontIntro];
+        [self.labelOthers setFont:fontLabel];
         [self.labelOthers setNumberOfLines:0];
-        [self.labelOthers setFont:fontIntro];
         [self.contentView addSubview:self.labelOthers];
 
         [self.name mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -122,6 +123,12 @@
     [self.intro setText:house.intro];
     [self.intro setBackgroundColor:[UIColor orangeColor]];
     [self.phone setText:house.phone];
+    NSLog(@"url is %@", house.url);
+    NSLog(@"hxUrl is %@", house.hxUrl);
+    NSLog(@"videoUrl is %@", house.videoUrl);
+    NSLog(@"otherUrl is %@", house.otherUrl);
+    NSLog(@"circleUrl is %@, circleUrls is %@", house.circleUrl, house.circleUrls);
+    NSLog(@"labelContent is %@, labelResult is %@", house.labelContent, house.labelResult);
 }
 
 + (CGFloat)height {

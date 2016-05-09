@@ -25,7 +25,7 @@
 @property(nonatomic, copy) NSString *labelContent;
 @property(nonatomic, copy) NSArray *labelResult;
 @property(nonatomic, copy) NSArray *imageUrls;
-@property(nonatomic, copy) NSString *circleUrls;
+@property(nonatomic, copy) NSArray *circleUrls;
 
 - (instancetype)initWithID:(NSUInteger)ID url:(NSString *)url name:(NSString *)name intro:(NSString *)intro phone:(NSString *)phone lat:(NSNumber *)lat lng:(NSNumber *)lng stars:(NSUInteger)stars labelContent:(NSString *)labelContent;
 
