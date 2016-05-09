@@ -3,7 +3,7 @@
 //  House
 //
 //  Created by dlut on 15/11/5.
-//  Copyright (c) 2015年 dlut. All rights reserved.
+//  Copyright (c) 2015年 dlut. All rights /Users/DLUT/Documents/AHouse/House/BaseModel.mreserved.
 //
 
 #import <Foundation/Foundation.h>
