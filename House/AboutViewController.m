@@ -14,6 +14,7 @@
 #import "View+MASAdditions.h"
 #import "WebViewController.h"
 #import "MapViewController.h"
+#import "CircleViewController.h"
 
 @interface AboutViewController () <UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong) UIButton *button;
@@ -63,6 +64,9 @@
 //            [self.tabBarController.navigationController pushViewController:testViewController animated:YES];
             MapViewController *mapViewController = [[MapViewController alloc] init];
             [self.tabBarController.navigationController pushViewController:mapViewController animated:YES];
+        } else if (2 == [indexPath row]) {
+            CircleViewController *circleViewController = [[CircleViewController alloc] init];
+            [self.tabBarController.navigationController pushViewController:circleViewController animated:YES];
         }
     } else {
         if (0 == [indexPath row]) {

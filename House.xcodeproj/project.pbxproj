@@ -76,6 +76,7 @@
 		BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */; };
 		BBE129FB1CD8A8AD00968A4B /* Househelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE129FA1CD8A8AD00968A4B /* Househelpers.m */; };
 		BBE57B471CDDD71A0050A019 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE57B461CDDD71A0050A019 /* DateUtil.m */; };
+		BBE57B4A1CE0334A0050A019 /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE57B491CE0334A0050A019 /* CircleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +221,8 @@
 		BBE129FA1CD8A8AD00968A4B /* Househelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Househelpers.m; sourceTree = "<group>"; };
 		BBE57B451CDDD71A0050A019 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
 		BBE57B461CDDD71A0050A019 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
+		BBE57B481CE0334A0050A019 /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
+		BBE57B491CE0334A0050A019 /* CircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleViewController.m; sourceTree = "<group>"; };
 		CDD2CFB3A835B7CBD32A1C7D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +357,8 @@
 				BBB1F4621C3E1A8700709674 /* WebViewController.m */,
 				BB1A1B101CBBC40500181CE0 /* MapViewController.h */,
 				BB1A1B111CBBC40500181CE0 /* MapViewController.m */,
+				BBE57B481CE0334A0050A019 /* CircleViewController.h */,
+				BBE57B491CE0334A0050A019 /* CircleViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -754,6 +759,7 @@
 				BBB1F44B1C1EC3E600709674 /* CommonEnums.m in Sources */,
 				BB2BAC9E1BE8E77100DB0FD8 /* AppDelegate.m in Sources */,
 				BBB1F45A1C33B4C100709674 /* TestViewController.m in Sources */,
+				BBE57B4A1CE0334A0050A019 /* CircleViewController.m in Sources */,
 				BB6206801C8EDE1D00F2D738 /* FetchServer.m in Sources */,
 				BB7F51851C033B8800E4634F /* ALHouseCell.m in Sources */,
 				BB7F51B91C084EBF00E4634F /* Reachability.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "CircleViewController.h"
+#import "CircleView.h"
 
 @interface CircleViewController ()
 
@@ -17,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:view];
+    NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", nil];
+    CircleView *circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT) autoPlay:YES images:images timeInterval:4.3f];
+    [self.view addSubview:circleView];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
