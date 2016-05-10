@@ -16,11 +16,20 @@
 #import "MapViewController.h"
 #import "CircleViewController.h"
 #import "AboutUsViewController.h"
+#import "CalculatorViewController.h"
+
+#define ICON_ABOUT_COMPANY @"about_company.png"
+#define ICON_UPDATE @"about_update.png"
+#define ICON_FEEDBACK @"about_advice.png"
+#define ICON_ABOUT_US @"about_us.png"
+#define ICON_CALCULATOR @"about_calculator.png"
+
 
 @interface AboutViewController () <UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong) UIButton *button;
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *datas;
+@property(nonatomic, strong) NSArray *iconPaths;
 @end
 
 @implementation AboutViewController
@@ -33,7 +42,8 @@
     [self.view addSubview:self.tableView];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
-    self.datas = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"公司简介", nil], [NSArray arrayWithObjects:@"意见反馈", @"版本测试", @"关于我们", nil], nil];
+    self.datas = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"公司简介", nil], [NSArray arrayWithObjects:@"意见反馈", @"版本更新", @"关于我们", @"房贷计算器", nil], nil];
+    self.iconPaths = [NSArray arrayWithObjects:[NSArray arrayWithObjects:ICON_ABOUT_COMPANY, nil], [NSArray arrayWithObjects:ICON_FEEDBACK, ICON_UPDATE, ICON_ABOUT_US, ICON_CALCULATOR ,nil], nil];
 }
 
 #pragma UITableViewDataSource
@@ -51,27 +61,32 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"aboutviewcell"];
     }
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", [self.datas[indexPath.section] objectAtIndex:indexPath.row]]];
-    [cell.imageView setImage:[UIImage imageNamed:@"home.png"]];
+    [cell.imageView setImage:[UIImage imageNamed:[self.iconPaths[indexPath.section] objectAtIndex:indexPath.row]]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [cell.imageView setContentMode:UIViewContentModeScaleToFill];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (1 == [indexPath section]) {
         if (0 == [indexPath row]) {
+            //feedback page
             FeedbackViewController *feedbackController = [[FeedbackViewController alloc] init];
             [self.tabBarController.navigationController pushViewController:feedbackController animated:YES];
         } else if (1 == [indexPath row]) {
-//            TestViewController *testViewController = [[TestViewController alloc] init];
-//            [self.tabBarController.navigationController pushViewController:testViewController animated:YES];
+            //
             MapViewController *mapViewController = [[MapViewController alloc] init];
             [self.tabBarController.navigationController pushViewController:mapViewController animated:YES];
         } else if (2 == [indexPath row]) {
             //about us page
-            CircleViewController *circleViewController = [[CircleViewController alloc] init];
             AboutUsViewController *aboutUsViewController = [[AboutUsViewController alloc] init];
             [self.tabBarController.navigationController pushViewController:aboutUsViewController animated:YES];
+        } else if(3 == [indexPath row]) {
+            CalculatorViewController *calculatorViewController = [[CalculatorViewController alloc] init];
+            [self.tabBarController.navigationController pushViewController:calculatorViewController animated:YES];
         }
     } else {
+        //company introduce
         if (0 == [indexPath row]) {
             WebViewController *webViewController = [[WebViewController alloc] init];
             [webViewController setUrl:COMPANY_URL];

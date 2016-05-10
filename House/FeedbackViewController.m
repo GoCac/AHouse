@@ -22,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.title = @"意见反馈";
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, 64 + 5, SCREEN_WIDTH - 10, (SCREEN_WIDTH - 10) * 0.42)];
     [self.textView setBackgroundColor:[UIColor lightTextColor]];
     [self.textView.layer setMasksToBounds:YES];
@@ -35,6 +36,7 @@
     self.submit = [[UIButton alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(self.textView.frame) + 10, SCREEN_WIDTH - 20, 40)];
     [self.submit setTitle:@"提交" forState:UIControlStateNormal];
     [self.submit setBackgroundColor:[UIColor redColor]];
+    [self.submit setTitleColor:[UIColor greenColor] forState:UIControlStateSelected];
     [self.submit.layer setCornerRadius:5.0f];
     [self.view addSubview:self.submit];
     [self.submit addTarget:self action:@selector(submitMsg) forControlEvents:UIControlEventTouchUpInside];

@@ -24,28 +24,32 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UITabBarController *tabBarController  = [[UITabBarController alloc] init];
     NewsTableViewController *newsController = [[NewsTableViewController alloc] init];
-    [newsController.tabBarItem setImage:[UIImage imageNamed:@"home.png"]];
+    [newsController.tabBarItem setImage:[[UIImage imageNamed:@"tab_home_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [newsController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"tab_home_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [newsController.tabBarItem setTitle:@"首页"];
     UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsController];
     
     HouseTableViewController *houseController = [[HouseTableViewController alloc] init];
-    [houseController.tabBarItem setImage:[UIImage imageNamed:@"star.png"]];
+    [houseController.tabBarItem setImage:[[UIImage imageNamed:@"tab_building_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [houseController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"tab_building_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [houseController.tabBarItem setTitle:@"楼盘"];
     UINavigationController *houseNavigationController = [[UINavigationController alloc] initWithRootViewController:houseController];
     
     ActivityTableViewController *activityTableViewController = [[ActivityTableViewController alloc] init];
-    [activityTableViewController.tabBarItem setImage:[UIImage imageNamed:@"star.png"]];
+    [activityTableViewController.tabBarItem setImage:[[UIImage imageNamed:@"tab_activity_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [activityTableViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"tab_activity_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [activityTableViewController.tabBarItem setTitle:@"活动"];
     UINavigationController *activityNavigationController = [[UINavigationController alloc] initWithRootViewController:activityTableViewController];
     
     AboutViewController *aboutViewController = [[AboutViewController alloc] init];
-    [aboutViewController.tabBarItem setImage:[UIImage imageNamed:@"star.png"]];
+    [aboutViewController.tabBarItem setImage:[[UIImage imageNamed:@"tab_about_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [aboutViewController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"tab_about_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [aboutViewController.tabBarItem setTitle:@"关于"];
     UINavigationController *aboutNavigaitionController = [[UINavigationController alloc] initWithRootViewController:aboutViewController];
     
     NSArray *array = @[newsNavigationController, houseNavigationController, activityNavigationController, aboutNavigaitionController];
     [tabBarController setViewControllers:array];
-    [tabBarController.tabBar setTintColor:[UIColor colorWithRed:70 / 255 green:170 / 255 blue:0 alpha:1.0]];
+    [tabBarController.tabBar setTintColor:[UIColor colorWithRed:255 / 255 green:0 blue:0 alpha:1.0]];
     UINavigationController *tabNavigationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];
     [self.window setRootViewController:tabNavigationController];
     [self.window makeKeyAndVisible];

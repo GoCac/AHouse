@@ -30,7 +30,7 @@
         self.title = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.title setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.title setLineBreakMode:NSLineBreakByWordWrapping];
-        [self.title setNumberOfLines:0];
+        [self.title setNumberOfLines:2];
         [self.title setFont:fontName];
         [self.contentView addSubview:self.title];
         CGFloat height = [self imageHeight];

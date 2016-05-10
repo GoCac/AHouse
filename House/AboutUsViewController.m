@@ -32,8 +32,9 @@
     // Do any additional setup after loading the view.
     CGFloat startY = 0;
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.title = @"关于我们";
     self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 32, 64 + 32, 64, 64)];
-    [self.logoImageView setImage:[UIImage imageNamed:@"maoni.png"]];
+    [self.logoImageView setImage:[UIImage imageNamed:@"app_icon.png"]];
     startY += 64 + 32 + 64;
 
     UIFont *font = [UIFont fontWithName:FONT_NAME size:APPNAME_FONT_SIZE];
