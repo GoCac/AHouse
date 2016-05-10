@@ -1,0 +1,17 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '7.0'
+pod 'AFNetworking', "~> 2.0"
+pod "MJRefresh", "~> 2.4"
+pod "PINRemoteImage"
+pod "AsyncDisplayKit"
+pod "Masonry"
+pod "HyphenateSDK"
+
+target 'House' do
+
+end
+
+target 'HouseTests' do
+
+end
+

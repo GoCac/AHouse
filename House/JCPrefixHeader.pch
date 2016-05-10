@@ -1,0 +1,54 @@
+//
+//  JCPrefixHeader.pch
+//  House
+//
+//  Created by dlut on 15/11/4.
+//  Copyright (c) 2015年 dlut. All rights reserved.
+//
+#import "Reachability.h"
+
+#ifndef House_JCPrefixHeader_pch
+#define House_JCPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define JC_DEBUG 1
+#define PRODUCT 0
+#define SERVER_URL @"http://218.24.163.140:808/house/web/index.php?r="
+#define IMAGE_SERVER_THUMBNAIL_URL @"http://218.24.163.140:808/house/images_mobile/"
+#define IMAGE_SERVER_ORIGIN_URL @"http://218.24.163.140:808/house/images/"
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define PLACE_HOLDER_IAMGE_URL @"github.png"
+#define PLACE_HOLDER_IMAGE [UIImage imageNamed:PLACE_HOLDER_IAMGE_URL]
+#define NEWS_URL @"news/news"
+#define NEWS_SERVER_URL [SERVER_URL stringByAppendingString:NEWS_URL]
+#define NEWS_MOBILE_URL [SERVER_URL stringByAppendingString:@"news/mobile&id="]
+#define SLIDE_URL @"slideshow/slides"
+#define SLIDE_SERVER_URL [SERVER_URL stringByAppendingString:SLIDE_URL]
+#define SLIDE_MOBILE_URL [SERVER_URL stringByAppendingString:@"slideshow/mobile&id="]
+#define HOUSE_URL @"house/houses"
+#define HOUSE_SERVER_URL [SERVER_URL stringByAppendingString:HOUSE_URL]
+#define ACTIVITY_URL @"activity/activities"
+#define ACTIVITY_SERVER_URL [SERVER_URL stringByAppendingString:ACTIVITY_URL]
+#define ACTIVITY_MOBILE_URL [SERVER_URL stringByAppendingString:@"activity/mobile&id="]
+#define COMPANY_URL @"http://202.118.67.200:10717/house/web/index.php?r=introduction/view"
+
+#define HELPER_URL @"helper/helpers"
+#define HELPER_SERVER_URL [SERVER_URL stringByAppendingString:HELPER_URL]
+#define FEADBACK_URL [SERVER_URL stringByAppendingString:@"feedback/feedbacks"]
+
+#define HELPERS_URL @"house/househelpers"
+#define HELPERS_SERVER_URL [SERVER_URL stringByAppendingString:HELPERS_URL]
+
+#define ERROR_MESSAGE @"网络加载失败，请重新尝试！"
+#define FAILURE_MESSAGE @"网络请求有误，请重新尝试！"
+
+#define CODE_SUCCESS 1
+#define CODE_FAILURE 0
+#define CODE_NO_DATA 2
+#define CODE @"code"
+#define RESULT @"result"
+
+#endif
