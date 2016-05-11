@@ -10,6 +10,7 @@
 #import "JCPrefixHeader.pch"
 #import "StringUtils.h"
 #import "NSString+Height.h"
+#import "HouseDetail.h"
 #define TITLE_FONT_NAME_SIZE 17.0f
 #define DETAIL_FONT_NAME_SIZE 16.0f
 #define TITLE_FONT_NAME @"Avenir-Book"
@@ -56,35 +57,35 @@
         CGFloat detailWidth = SCREEN_WIDTH * (1 - TITLE_WIDTH_RATE);
         UIFont *detailFont = [UIFont fontWithName:TITLE_FONT_NAME size:DETAIL_FONT_NAME_SIZE];
         self.address = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_WIDTH, i * titleHeight, detailWidth, titleHeight)];
-        [self.address setText:@"哈哈哈哈哈哈哈哈哈哈哈"];
+//        [self.address setText:@"哈哈哈哈哈哈哈哈哈哈哈"];
         [self.address setBackgroundColor:[UIColor redColor]];
         [self.address setFont:detailFont];
         [self.address setTextColor:[UIColor lightGrayColor]];
         [self addSubview:self.address];
         i++;
         self.houseType = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_WIDTH, titleHeight * i, detailWidth, titleHeight)];
-        [self.houseType setText:@"哈哈哈哈哈哈哈"];
+//        [self.houseType setText:@"哈哈哈哈哈哈哈"];
         [self.houseType setBackgroundColor:[UIColor greenColor]];
         [self.houseType setFont:detailFont];
         [self.houseType setTextColor:[UIColor lightGrayColor]];
         [self addSubview:self.houseType];
         i++;
         self.forceType = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_WIDTH, titleHeight * i, detailWidth, titleHeight)];
-        [self.forceType setText:@"物业类型是什么什么"];
+//        [self.forceType setText:@"物业类型是什么什么"];
         [self.forceType setBackgroundColor:[UIColor redColor]];
         [self.forceType setFont:detailFont];
         [self.forceType setTextColor:[UIColor lightGrayColor]];
         [self addSubview:self.forceType];
         i++;
         self.avgPrice = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_WIDTH, titleHeight * i, detailWidth, titleHeight)];
-        [self.avgPrice setText:@"均价大大大大大大"];
+//        [self.avgPrice setText:@"均价大大大大大大"];
         [self.avgPrice setBackgroundColor:[UIColor greenColor]];
         [self.avgPrice setFont:detailFont];
         [self.avgPrice setTextColor:[UIColor lightGrayColor]];
         [self addSubview:self.avgPrice];
         i++;
         self.phone = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_WIDTH, titleHeight * i, detailWidth, titleHeight)];
-        [self.phone setText:@"13699297633"];
+//        [self.phone setText:@"13699297633"];
         [self.phone setBackgroundColor:[UIColor redColor]];
         [self.phone setFont:detailFont];
         [self.phone setTextColor:[UIColor grayColor]];
@@ -100,6 +101,14 @@
         [self addSubview:self.chat];
     }
     return self;
+}
+
+- (void)updateWithHouse:(HouseDetail *)houseDetail {
+    [self.address setText:houseDetail.address];
+    [self.houseType setText:houseDetail.houseType];
+    [self.forceType setText:houseDetail.forceType];
+    [self.avgPrice setText:houseDetail.avgPrice];
+    [self.phone setText:houseDetail.phone];
 }
 
 + (CGFloat)titleHeight {

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HouseDetail.h"
 
 @interface HouseDetailViewController : UIViewController
-
+@property(nonatomic, strong) HouseDetail *houseDetail;
 @end

@@ -8,10 +8,12 @@
 
 #import "CircleTextView.h"
 #import "JCPrefixHeader.pch"
+#import "HouseDetail.h"
 #define kMenuViewHeight 40
 
 @interface CircleTextView () <UIScrollViewDelegate>
 @property(nonatomic, strong) NSArray *titles;
+@property(nonatomic, strong) HouseDetail *houseDetail;
 @property(nonatomic, assign) NSUInteger currentIndex;
 @property(nonatomic, strong) NSMutableArray *items;
 @property(nonatomic, assign) NSUInteger number;
@@ -28,10 +30,11 @@
 }
 */
 
-- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles {
+- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles houseDetail:(HouseDetail *)houseDetail {
     if (self = [super initWithFrame:frame]) {
         NSAssert((nil != titles && [titles count] > 0), @"titles should not be nil and empty");
         self.titles = titles;
+        self.houseDetail = houseDetail;
         self.number = [titles count];
         self.currentIndex = 0;
         self.items = [[NSMutableArray alloc] init];
@@ -64,7 +67,13 @@
     [self.scrollView setDelegate:self];
     for (i = 0; i < number; i++) {
         UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(i * SCREEN_WIDTH, 0, SCREEN_WIDTH, height)];
-        [textView setText:[NSString stringWithFormat:@"hello world %lu", i]];
+        if (0 == i) {
+            [textView setText:self.houseDetail.recReason];
+        } else if (1 == i) {
+            [textView setText:self.houseDetail.trafficLines];
+        } else {
+            [textView setText:self.houseDetail.designIdea];
+        }
         [self.scrollView addSubview:textView];
     }
     [self addSubview:self.scrollView];

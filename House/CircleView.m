@@ -9,6 +9,7 @@
 #import "CircleView.h"
 #import "JCPrefixHeader.pch"
 #import "PINImageView+PINRemoteImage.h"
+#import "StringUtils.h"
 
 @interface CircleView () <UIScrollViewDelegate>
 @property(nonatomic, assign) BOOL isLocalRes;
@@ -94,7 +95,7 @@
 }
 
 - (void)startCircle {
-    if (!self.isAutoPlay && self.timeInterval > 0) {
+    if (!self.isAutoPlay && self.timeInterval > 0.f && self.num > 0) {
         [NSTimer scheduledTimerWithTimeInterval:self.timeInterval target:self selector:@selector(circle) userInfo:nil repeats:YES];
         [self setAutoPlay:YES];
     }
@@ -103,7 +104,7 @@
 - (void)initSubiews {
     [self addScrollView];
     [self addPageControl];
-    if (self.autoPlay && self.timeInterval > 0.f) {
+    if (self.autoPlay && self.timeInterval > 0.f && self.num > 0) {
         [NSTimer scheduledTimerWithTimeInterval:self.timeInterval target:self selector:@selector(circle) userInfo:nil repeats:YES];
     }
 }
@@ -122,12 +123,16 @@
 }
 
 - (void)addImageViews {
+    if (!self.isLocalRes && nil == self.imageUrls) {
+        return;
+    }
     for (NSUInteger i = 0; i < 3; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * i, 0, SCREEN_WIDTH, self.bounds.size.height)];
         if (self.isLocalRes) {
             [imageView setImage:[UIImage imageNamed:(NSString *)[self.array objectAtIndex:i]]];
         } else {
-            [imageView pin_setImageFromURL:[NSURL URLWithString:[IMAGE_SERVER_ORIGIN_URL stringByAppendingString:self.imageUrls[i % (self.num)]]]];
+            [imageView pin_setImageFromURL:[NSURL URLWithString:[StringUtils originImageUrl:self.array[i]]]];
+            NSLog(@"ii = %ld, url is %@", i, self.array[i]);
         }
 //        [imageView setContentMode:UIViewContentModeLeft];
         [self.scrollView addSubview:imageView];
@@ -171,7 +176,7 @@
     }
     [_array removeAllObjects];
     NSUInteger left = (self.currentPage - 1 + self.num) % self.num;
-    NSUInteger right = (self.currentPage + 1 + self.num) % self.num;
+    NSUInteger right = (self.currentPage + 1) % self.num;
     if (self.isLocalRes) {
         [_array addObject:self.images[left]];
         [_array addObject:self.images[self.currentPage]];
@@ -190,13 +195,14 @@
     for (NSUInteger i = 0; i < [subviews count]; i++) {
         UIImageView *imageView = (UIImageView*)[subviews objectAtIndex:i];
         if (self.isLocalRes) {
-            [imageView setImage:[UIImage imageNamed:(NSString *)self.array[i % self.num]]];
+            [imageView setImage:[UIImage imageNamed:(NSString *)self.array[i]]];
         } else {
-            [imageView pin_setImageFromURL:[NSURL URLWithString:[IMAGE_SERVER_ORIGIN_URL stringByAppendingString:self.array[i % (self.num)]]]];
+            [imageView pin_setImageFromURL:[NSURL URLWithString:[StringUtils originImageUrl:self.array[i]]]];
+            NSLog(@"i = %ld, url is %@", i, self.array[i]);
         }
     }
     [self.pageControl setCurrentPage:self.currentPage];
-    [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0) animated:NO];
+    [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0) animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

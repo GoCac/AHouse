@@ -15,6 +15,7 @@
 
 @interface HouseDetailViewController () <CircleTextViewDelegate>
 @property(nonatomic, strong) CircleView *circleView;
+@property(nonatomic, strong) HouseDetailView *detailView;
 @property(nonatomic, strong) CircleTextView *circleTextView;
 @end
 
@@ -27,20 +28,33 @@
     //下面两行代码解决circleview显示的问题。。
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:view];
-    
+    NSLog(@"B1");
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToMap)]];
     NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", nil];
-    self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES timeInterval:3.0f];
-    [self.circleView setImages:images];
+    self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES timeInterval:14.2f];
+    if (PRODUCT) {
+        [self.circleView setImages:images];
+    } else {
+//        [self.circleView setImageUrls:self.houseDetail.imageUrls];
+    }
     [self.view addSubview:self.circleView];
-    HouseDetailView *detailView = [[HouseDetailView alloc] initWithFrame:CGRectMake(0, 64 + CIRCLEVIEW_HEIGHT, SCREEN_WIDTH, [HouseDetailView height])];
-    [self.view addSubview:detailView];
+    self.detailView = [[HouseDetailView alloc] initWithFrame:CGRectMake(0, 64 + CIRCLEVIEW_HEIGHT, SCREEN_WIDTH, [HouseDetailView height])];
+//    [self.detailView updateWithHouse:self.houseDetail];
+    [self.view addSubview:self.detailView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     CGFloat curY = 64 + CIRCLEVIEW_HEIGHT + [HouseDetailView height];
     NSArray *titles = [[NSArray alloc] initWithObjects:@"项目介绍", @"综合配套", @"设计理念", nil];
-    self.circleTextView = [[CircleTextView alloc] initWithFrame:CGRectMake(0, curY, SCREEN_WIDTH, SCREEN_HEIGHT - curY) titles:titles];
+    self.circleTextView = [[CircleTextView alloc] initWithFrame:CGRectMake(0, curY, SCREEN_WIDTH, SCREEN_HEIGHT - curY) titles:titles houseDetail:self.houseDetail];
     [self.circleTextView setDelegate:self];
     [self.view addSubview:self.circleTextView];
+    NSLog(@"B2");
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"C");
+    [self.circleView setImageUrls:self.houseDetail.imageUrls];
+    [self.detailView updateWithHouse:self.houseDetail];
+    NSLog(@"imageUrls is %@", _houseDetail.imageUrls);
 }
 
 - (void)jumpToMap {
