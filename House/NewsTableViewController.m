@@ -47,7 +47,7 @@
 //        self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES images:images timeInterval:3.6f];
         self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES imageUrls:imageUrls timeInterval:4.0f];
         for (NSUInteger i = 0; i < 20; i++) {
-            [self.datas addObject:[[News alloc] initWithID:i picUrl:PLACE_HOLDER_IAMGE_URL title:@"北京的房价涨了，哈哈" author:@"楠楠" time:@"2015/11/07"]];
+            [self.datas addObject:[[News alloc] initWithID:i picUrl:PLACE_HOLDER_IAMGE_URL title:@"北京的房价涨了，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" author:@"楠楠" time:@"2015/11/07"]];
         }
     } else {
         self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:NO timeInterval:3.6f];

@@ -39,7 +39,7 @@
         self.intro = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.intro setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.intro setLineBreakMode:NSLineBreakByWordWrapping];
-        [self.intro setNumberOfLines:0];
+        [self.intro setNumberOfLines:2];
 //        [self.intro setTextAlignment:NSTextAlignmentCenter];
         [self.contentView addSubview:self.intro];
         
@@ -85,7 +85,7 @@
             make.left.equalTo(self.contentView.mas_left).with.offset(2 * kPaddingCommon + imageWidth);
 //            make.top.equalTo(self.ratingView.mas_bottom).with.offset(0);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kPaddingCommon);
-            make.center.equalTo(self.contentView).centerOffset(CGPointMake(0.5 * (kPaddingCommon + imageWidth), 0.5 * (kRatingViewHeight - [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_PHONE_SIZE]])));
+//            make.center.equalTo(self.contentView).centerOffset(CGPointMake(0.5 * (kPaddingCommon + imageWidth), 0.5 * (kRatingViewHeight - [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_PHONE_SIZE]])));
 //            make.bottom.equalTo(self.phone.mas_top).with.offset(0);
         }];
         [self.phone mas_makeConstraints:^(MASConstraintMaker *make) {

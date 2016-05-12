@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreGraphics/CGGeometry.h>
 
 @interface NSString (Height)
 + (CGFloat)heightSingle:(UIFont*)font;
++ (CGSize)heightMultip:(UIFont*) font withString:(NSString*) str withWidth:(CGFloat) width;
++ (CGSize)heightMultip:(UIFont*) font withString:(NSString*) str;
 @end

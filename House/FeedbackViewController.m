@@ -8,7 +8,8 @@
 
 #import "FeedbackViewController.h"
 #import "StringUtils.h"
-
+#import "UIImage+ImageWithColor.h"
+#import "UIButton+Selector.h"
 @interface FeedbackViewController () <UITextViewDelegate>
 @property(nonatomic, strong) UITextView *textView;
 @property(nonatomic, strong) UIButton *submit;
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.title = @"意见反馈";
     self.textView = [[UITextView alloc] initWithFrame:CGRectMake(5, 64 + 5, SCREEN_WIDTH - 10, (SCREEN_WIDTH - 10) * 0.42)];
     [self.textView setBackgroundColor:[UIColor lightTextColor]];
     [self.textView.layer setMasksToBounds:YES];
@@ -38,7 +40,7 @@
     [self.submit.layer setCornerRadius:5.0f];
     [self.view addSubview:self.submit];
     [self.submit addTarget:self action:@selector(submitMsg) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self.submit setSelector];//设置selector
     self.hintlabel = [[UILabel alloc] initWithFrame:CGRectMake(3, 4.5, 200, 25)];
     [self.hintlabel setText:@"输入您的留言..."];
     [self.hintlabel setEnabled:NO];

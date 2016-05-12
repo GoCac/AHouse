@@ -14,13 +14,14 @@
 #import "NSString+Height.h"
 
 
-#define kNewsPaddingCommon 2
-#define kNewsPaddingTopAndBottom 3
+#define kNewsPaddingCommon 9
+#define kNewsPaddingTopAndBottom 16
+
 #define kNewsWidthAndHeightRate 1.618
 #define NEWS_FONT_NAME @"Avenir-Book"
-#define NEWS_FONT_NAME_SIZE 17.0f
-#define NEWS_FONT_AUTHOR_SIZE 15.0f
-#define NEWS_FONT_DATE_SIZE 15.0f
+#define NEWS_FONT_NAME_SIZE 16.0f
+#define NEWS_FONT_AUTHOR_SIZE 12.0f
+#define NEWS_FONT_DATE_SIZE 12.0f
 
 @implementation ALNewsCell
 
@@ -30,7 +31,7 @@
         self.title = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.title setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.title setLineBreakMode:NSLineBreakByWordWrapping];
-        [self.title setNumberOfLines:0];
+        [self.title setNumberOfLines:2];
         [self.title setFont:fontName];
         [self.contentView addSubview:self.title];
         CGFloat height = [self imageHeight];
@@ -38,30 +39,41 @@
         self.author = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.author setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.author setFont:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_AUTHOR_SIZE]];
+        [self.author setTextColor:[UIColor grayColor]];
         [self.contentView addSubview:self.author];
         
         self.time = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.time setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.time setFont:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_DATE_SIZE]];
+        [self.time setTextColor:[UIColor grayColor]];
         [self.contentView addSubview:self.time];
         
         CGFloat imageWidth = height * kNewsWidthAndHeightRate;
-        self.mImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, height / 0.618, height)];
+        self.mImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [self.mImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.contentView addSubview:self.mImageView];
         
-        [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.mImageView mas_makeConstraints:^(MASConstraintMaker *make) {//上下20
             make.top.equalTo(self.contentView.mas_top).with.offset(kNewsPaddingTopAndBottom);
+            make.right.equalTo(self.title.mas_left).with.offset(-10);
+            make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingTopAndBottom);
+        }];
+        
+        [self.title mas_makeConstraints:^(MASConstraintMaker *make) {//上15 下 10
+            make.top.equalTo(self.contentView.mas_top).with.offset(kNewsPaddingCommon);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kNewsPaddingCommon);
-            make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon + imageWidth);
-//            make.center.equalTo(self.contentView).centerOffset(CGPointMake(0.5 * imageWidth, -0.5 * [NSString heightSingle:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_AUTHOR_SIZE]]));
-            make.bottom.equalTo(self.author.mas_top).with.offset(0);
+            make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon + imageWidth + 10);
+            make.bottom.equalTo(self.author.mas_top).with.offset(-5);
         }];
         [self.author mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.title.mas_bottom).with.offset(5);
             make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingCommon);
-            make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon + imageWidth);
+            make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon + imageWidth + 10);
         }];
         [self.time mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingTopAndBottom);
+            make.top.equalTo(self.title.mas_bottom).with.offset(5);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingCommon);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kNewsPaddingCommon);
         }];
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
@@ -76,8 +88,7 @@
     dispatch_once(&onceToken, ^{
         height += 2 * [NSString heightSingle:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_NAME_SIZE]];
         height += [NSString heightSingle:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_AUTHOR_SIZE]];
-//        height += [NSString heightSingle:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_DATE_SIZE]];
-        height += 2 * kNewsPaddingTopAndBottom;
+        height += 2 * kNewsPaddingTopAndBottom + 5;
     });
     return height;
 }
