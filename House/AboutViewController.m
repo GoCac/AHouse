@@ -20,7 +20,7 @@
 
 #define ICON_ABOUT_COMPANY @"about_company.png"
 #define ICON_COMPANY_SITE @"about_company.png"
-#define ICON_UPDATE @"about_update.png"
+#define ICON_UPDATE @"about_refresh.png"
 #define ICON_FEEDBACK @"about_advice.png"
 #define ICON_ABOUT_US @"about_us.png"
 #define ICON_CALCULATOR @"about_calculator.png"
@@ -61,17 +61,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"aboutviewcell"];
+    static NSString *identifier = @"aboutviewcell";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"aboutviewcell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
     [cell.textLabel setText:[NSString stringWithFormat:@"%@", [self.datas[indexPath.section] objectAtIndex:indexPath.row]]];
     [cell.imageView setImage:[UIImage imageNamed:[self.iconPaths[indexPath.section] objectAtIndex:indexPath.row]]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    [cell.imageView setContentMode:UIViewContentModeScaleToFill];
     return cell;
 }
 
+#pragma UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (1 == [indexPath section]) {
         if (0 == [indexPath row]) {

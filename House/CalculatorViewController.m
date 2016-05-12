@@ -98,7 +98,7 @@
     self.nextViewStartY += viewHeight;
     
     self.priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, self.nextViewStartY += topMargin, leftWidth, viewHeight)];
-    self.priceLabel.text = @"单价（元/平方米）";
+    self.priceLabel.text = @"单价(元/平方米)";
     [self.priceLabel setFont:basicFont];
     self.priceUITextField = [self createTextFieldWithDefaultValue:@"" rect:CGRectMake(leftWidth + leftMargin, self.nextViewStartY, rightWidth, viewHeight)];
     self.nextViewStartY += viewHeight;
@@ -106,7 +106,7 @@
     [self.view addSubview:self.priceUITextField];
     
     self.areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(leftMargin, self.nextViewStartY += topMargin, leftWidth, viewHeight)];
-    self.areaLabel.text = @"面积（平方米）";
+    self.areaLabel.text = @"面积(平方米)";
     [self.areaLabel setFont:basicFont];
     self.areaUITextField = [self createTextFieldWithDefaultValue:@"" rect:CGRectMake(leftWidth + leftMargin, self.nextViewStartY, rightWidth, viewHeight)];
     self.nextViewStartY += viewHeight;
