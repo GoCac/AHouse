@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "MenuView.h"
 
-@class CircleTextView;
+@class CircleTextView, HouseDetail;
 @protocol CircleTextViewDelegate <NSObject>
 - (void)circleTextView:(CircleTextView *)circleTextView didSelectedAtIndex:(NSUInteger)index;
 @end
 
 @interface CircleTextView : UIView<MenuViewDelegate>
 @property(nonatomic, weak) id<CircleTextViewDelegate> delegate;
-- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles;
+- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles houseDetail:(HouseDetail *)houseDetail;
 - (void)selectedAtIndex:(NSUInteger)index;
 @end

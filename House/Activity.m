@@ -11,7 +11,7 @@
 
 @implementation Activity
 
-- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title time:(NSNumber *)postTime {
+- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title postTime:(NSNumber *)postTime {
     if(self = [super initWithID:ID]) {
         self.picUrl = picUrl;
         self.title = title;

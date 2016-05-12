@@ -56,8 +56,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    HouseDetailViewController *hvController = [[HouseDetailViewController alloc] init];
-    [self.tabBarController.navigationController pushViewController:hvController animated:YES];
+    HouseDetailViewController *hdvController = [[HouseDetailViewController alloc] init];
+    [hdvController setHouseDetail:(HouseDetail *)self.datas[[indexPath row]]];
+    [self.tabBarController.navigationController pushViewController:hdvController animated:YES];
 }
 
 /*

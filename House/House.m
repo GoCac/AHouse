@@ -48,21 +48,20 @@
     if (nil == _imageUrls) {
         NSMutableArray *result = [[NSMutableArray alloc] init];
         if (![StringUtils isEmpty:self.url]) {
-            [result addObject:[StringUtils originImageUrl:self.url]];
+            [result addObject:self.url];
         }
         if (![StringUtils isEmpty:self.hxUrl]) {
-            [result addObject:[StringUtils originImageUrl:self.hxUrl]];
+            [result addObject:self.hxUrl];
         }
         if (![StringUtils isEmpty:self.otherUrl]) {
             NSArray *others = [StringUtils parseSemContent:self.otherUrl];
             for (NSString *item in others) {
-                [result addObject:[StringUtils originImageUrl:item]];
+                [result addObject:item];
             }
         }
         _imageUrls = result;
-        return _imageUrls;
     }
-    return nil;
+    return _imageUrls;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {

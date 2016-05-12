@@ -8,6 +8,8 @@
 
 #import "TestViewController.h"
 #import "JCPrefixHeader.pch"
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 @interface TestViewController () <NSURLSessionDownloadDelegate>
 
 @end

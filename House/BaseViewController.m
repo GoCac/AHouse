@@ -10,7 +10,8 @@
 #import "NetWorkManager.h"
 
 @interface BaseViewController ()
-@property(nonatomic, strong) UIAlertView *alertView;
+//@property(nonatomic, strong) UIAlertView *alertView;
+@property(nonatomic, strong) UIAlertController *alertController;
 @end
 
 @implementation BaseViewController
@@ -19,7 +20,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _manager = [NetWorkManager shareSM];
-    self.alertView = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+//    self.alertView = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+    self.alertController = [UIAlertController alertControllerWithTitle:@"提醒" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"alert ok");
+    }];
+    [self.alertController addAction:okAction];
 }
 
 - (void)handleFailure:(NSString *)msg {
@@ -31,13 +37,18 @@
 }
 
 - (void)handleSuccess:(NSString *)msg {
-    [self.alertView setMessage:msg];
-    [self.alertView show];
+//    [self.alertView setMessage:msg];
+//    [self.alertView show];
+    [self showAlertView:msg];
 }
 
 - (void)showAlertView:(NSString *)msg {
-    [self.alertView setMessage:msg];
-    [self.alertView show];
+//    [self.alertView setMessage:msg];
+//    [self.alertView show];
+    [self.alertController setMessage:msg];
+    [self presentViewController:self.alertController animated:YES completion:^{
+        
+    }];
 }
 
 - (void)handleCode:(NSInteger)code {
@@ -45,8 +56,9 @@
         case CODE_SUCCESS:
             break;
         case CODE_FAILURE:
-            [self.alertView setMessage:ERROR_MESSAGE];
-            [self.alertView show];
+//            [self.alertView setMessage:ERROR_MESSAGE];
+//            [self.alertView show];
+            [self showAlertView:ERROR_MESSAGE];
             break;
         default:
             break;

@@ -17,10 +17,10 @@
 #define kWidthAndHeightRate 1.618
 #define FONT_NAME @"Avenir-Book"
 #define FONT_NAME_SIZE 17.0f
-#define FONT_INTRO_SIZE 15.0f
+#define FONT_INTRO_SIZE 14.0f
 #define FONT_PHONE_SIZE 16.0f
 #define FONT_LABEL_SIZE 12.0f
-#define kRatingViewHeight 10
+#define kRatingViewHeight 13
 #define kRatingViewSpacing 2
 #define kPaddingLabelAndPhoneSpacing 3
 
@@ -100,7 +100,7 @@
             make.top.equalTo(self.phone.mas_bottom).with.offset(kPaddingLabelAndPhoneSpacing);
         }];
         [self.labelOthers mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.phone.mas_bottom).with.offset(kPaddingLabelAndPhoneSpacing);
+//            make.top.equalTo(self.phone.mas_bottom).with.offset(kPaddingLabelAndPhoneSpacing);
             make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kPaddingCommon);
             make.left.equalTo(self.labelFirst.mas_right).with.offset(kPaddingCommon * 3);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kPaddingCommon);
@@ -140,7 +140,7 @@
         height += (2 + 1) * [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_INTRO_SIZE]];
         height += [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_PHONE_SIZE]];
         height += kRatingViewHeight;
-        height += 2 * kPaddingTopAndBottom + kPaddingLabelAndPhoneSpacing;
+        height += 2 * (kPaddingTopAndBottom + kPaddingLabelAndPhoneSpacing) + kPaddingTopAndBottom;
     });
     return height;
 }

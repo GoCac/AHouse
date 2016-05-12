@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class HouseDetail;
 @interface HouseDetailView : UIView
 + (CGFloat)height;
+- (void)updateWithHouse:(HouseDetail *)houseDetail;
 @end

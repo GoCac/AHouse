@@ -24,6 +24,10 @@
 #define ICON_ABOUT_US @"about_us.png"
 #define ICON_CALCULATOR @"about_calculator.png"
 
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 
 @interface AboutViewController () <UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong) UIButton *button;

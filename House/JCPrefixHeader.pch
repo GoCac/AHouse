@@ -17,7 +17,7 @@
 #define PRODUCT 0
 #define SERVER_URL @"http://218.24.163.140:808/house/web/index.php?r="
 #define IMAGE_SERVER_THUMBNAIL_URL @"http://218.24.163.140:808/house/images_mobile/"
-#define IMAGE_SERVER_ORIGIN_URL @"http://202.118.67.200:10717/house/images/"
+#define IMAGE_SERVER_ORIGIN_URL @"http://218.24.163.140:808/house/images/"
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define PLACE_HOLDER_IAMGE_URL @"github.png"

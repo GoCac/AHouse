@@ -25,7 +25,7 @@
     _height = [ALActivityCell height];
     if (PRODUCT) {
         for (int i = 0 ; i < 8; i++) {
-            [self.datas addObject:[[Activity alloc] initWithID:i picUrl:PLACE_HOLDER_IAMGE_URL title:@"hello world" time:@"2016 01/12"]];
+            [self.datas addObject:[[Activity alloc] initWithID:i picUrl:PLACE_HOLDER_IAMGE_URL title:@"hello world" postTime:@1234567]];
         }
     } else {
 //        [self loadLocalData];

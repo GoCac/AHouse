@@ -15,4 +15,5 @@
 - (void)handleFailure:(NSString *)msg;
 - (void)handleError:(NSString *)msg;
 - (void)handleSuccess:(NSString *)msg;
+- (void)showAlertView:(NSString *)msg;
 @end

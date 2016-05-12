@@ -13,7 +13,8 @@
 #import "NetWorkManager.h"
 
 @interface BaseTableViewController ()
-@property(nonatomic, strong) UIAlertView *alertView;
+//@property(nonatomic, strong) UIAlertView *alertView;
+@property(nonatomic, strong) UIAlertController *alertController;
 @end
 
 @implementation BaseTableViewController
@@ -30,7 +31,12 @@
     [self.tableView setMj_header:[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)]];
     [self.tableView setMj_footer:[MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)]];
     _datas = [[NSMutableArray alloc] init];
-    self.alertView = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+//    self.alertView = [[UIAlertView alloc] initWithTitle:@"提醒" message:@"" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+    self.alertController = [UIAlertController alertControllerWithTitle:@"提醒" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAlertAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [self.alertController addAction:okAlertAction];
     [self.tableView setSeparatorColor:[UIColor orangeColor]];
     [self.tableView setAllowsMultipleSelection:NO];
 }
@@ -66,8 +72,9 @@
         case CODE_SUCCESS:
             break;
         case CODE_FAILURE:
-            [self.alertView setMessage:ERROR_MESSAGE];
-            [self.alertView show];
+//            [self.alertView setMessage:ERROR_MESSAGE];
+//            [self.alertView show];
+            [self showAlertMsg:ERROR_MESSAGE];
             break;
         default:
             break;
@@ -76,9 +83,15 @@
 }
 
 - (void)handleFailure {
-    [self.alertView setMessage:ERROR_MESSAGE];
-    [self.alertView show];
+//    [self.alertView setMessage:ERROR_MESSAGE];
+//    [self.alertView show];
+    [self showAlertMsg:ERROR_MESSAGE];
     [self resetTableView];
+}
+
+- (void)showAlertMsg:(NSString *)msg {
+    [self.alertController setMessage:msg];
+    [self presentViewController:self.alertController animated:YES completion:nil];
 }
 
 - (void)resetTableView {

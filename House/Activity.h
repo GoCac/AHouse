@@ -16,6 +16,6 @@
 @property(nonatomic, assign) NSString* isTop;
 @property(nonatomic, assign, readonly) BOOL isFirst;
 
-- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title time:(NSNumber *)postTime;
+- (instancetype)initWithID:(NSUInteger)ID picUrl:(NSString *)picUrl title:(NSString *)title postTime:(NSNumber *)postTime;
 
 @end
