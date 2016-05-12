@@ -17,6 +17,7 @@
 @property(nonatomic, strong) CircleView *circleView;
 @property(nonatomic, strong) HouseDetailView *detailView;
 @property(nonatomic, strong) CircleTextView *circleTextView;
+@property(nonatomic, assign) BOOL isFirst;
 @end
 
 @implementation HouseDetailViewController
@@ -31,7 +32,7 @@
     NSLog(@"B1");
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToMap)]];
     NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", nil];
-    self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES timeInterval:14.2f];
+    self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES timeInterval:4.2f];
     if (PRODUCT) {
         [self.circleView setImages:images];
     } else {
@@ -48,12 +49,16 @@
     [self.circleTextView setDelegate:self];
     [self.view addSubview:self.circleTextView];
     NSLog(@"B2");
+    self.isFirst = false;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     NSLog(@"C");
-    [self.circleView setImageUrls:self.houseDetail.imageUrls];
-    [self.detailView updateWithHouse:self.houseDetail];
+    if (self.isFirst) {
+        [self.circleView setImageUrls:self.houseDetail.imageUrls];
+        [self.detailView updateWithHouse:self.houseDetail];
+        self.isFirst = YES;
+    }
     NSLog(@"imageUrls is %@", _houseDetail.imageUrls);
 }
 

@@ -10,6 +10,7 @@
 #import "JCPrefixHeader.pch"
 #import "PINImageView+PINRemoteImage.h"
 #import "StringUtils.h"
+#import "ImageUtil.h"
 
 @interface CircleView () <UIScrollViewDelegate>
 @property(nonatomic, assign) BOOL isLocalRes;
@@ -126,13 +127,14 @@
     if (!self.isLocalRes && nil == self.imageUrls) {
         return;
     }
+    NSArray *temArray = self.array;
     for (NSUInteger i = 0; i < 3; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * i, 0, SCREEN_WIDTH, self.bounds.size.height)];
         if (self.isLocalRes) {
-            [imageView setImage:[UIImage imageNamed:(NSString *)[self.array objectAtIndex:i]]];
+            [imageView setImage:[UIImage imageNamed:(NSString *)[temArray objectAtIndex:i]]];
         } else {
-            [imageView pin_setImageFromURL:[NSURL URLWithString:[StringUtils originImageUrl:self.array[i]]]];
-            NSLog(@"ii = %ld, url is %@", i, self.array[i]);
+            [imageView pin_setImageFromURL:[NSURL URLWithString:[StringUtils originImageUrl:temArray[i]]] placeholderImage:[ImageUtil placeholderImage]];
+            NSLog(@"ii = %ld, url is %@", i, temArray[i]);
         }
 //        [imageView setContentMode:UIViewContentModeLeft];
         [self.scrollView addSubview:imageView];
@@ -192,17 +194,18 @@
 //给图片重新赋值，调整pageControl；
 - (void)refresh {
     NSArray *subviews = [self.scrollView subviews];
+    NSArray *temArray = self.array;
     for (NSUInteger i = 0; i < [subviews count]; i++) {
         UIImageView *imageView = (UIImageView*)[subviews objectAtIndex:i];
         if (self.isLocalRes) {
-            [imageView setImage:[UIImage imageNamed:(NSString *)self.array[i]]];
+            [imageView setImage:[UIImage imageNamed:(NSString *)temArray[i]]];
         } else {
-            [imageView pin_setImageFromURL:[NSURL URLWithString:[StringUtils originImageUrl:self.array[i]]]];
+            [imageView pin_setImageFromURL:[NSURL URLWithString:[StringUtils originImageUrl:temArray[i]]] placeholderImage:[ImageUtil placeholderImage]];
             NSLog(@"i = %ld, url is %@", i, self.array[i]);
         }
     }
     [self.pageControl setCurrentPage:self.currentPage];
-    [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH, 0) animated:NO];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

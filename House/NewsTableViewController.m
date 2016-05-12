@@ -40,10 +40,12 @@
     self.mobileUrl = NEWS_MOBILE_URL;
     _slideUrl = SLIDE_SERVER_URL;
     [self.navigationItem setTitle:@"首页"];
-    NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", nil];
     _height = [ALNewsCell height];
     if (PRODUCT) {
-        self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES images:images timeInterval:3.6f];
+//        NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", @"maoni.png", @"home.png", nil];
+        NSArray *imageUrls = [NSArray arrayWithObjects:@"1458629355.jpg", @"1458629314.jpg", @"1458629314hx.jpg", nil];//, @"1458629365.jpg", @"1458629375.jpg", @"1458629384.jpg"
+//        self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES images:images timeInterval:3.6f];
+        self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES imageUrls:imageUrls timeInterval:4.0f];
         for (NSUInteger i = 0; i < 20; i++) {
             [self.datas addObject:[[News alloc] initWithID:i picUrl:PLACE_HOLDER_IAMGE_URL title:@"北京的房价涨了，哈哈" author:@"楠楠" time:@"2015/11/07"]];
         }

@@ -86,7 +86,7 @@
     }
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithCapacity:1];
     [dic setObject:msg forKey:@"content"];
-    [self.manager POST:FEADBACK_URL parameters:dic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [self.manager POST:FEADBACK_URL parameters:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         if (nil != responseObject && CODE_SUCCESS == [responseObject[CODE] integerValue]) {
             [self handleSuccess:@"发送成功，谢谢"];
             [self.textView setText:@""];
@@ -94,7 +94,7 @@
             [self handleFailure:@"发送失败，请重新尝试"];
         }
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self handleFailure:@"网络连接错误，请重新尝试"];
     }];
 }

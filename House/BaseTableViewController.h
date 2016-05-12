@@ -21,7 +21,7 @@
     CGFloat _height;
 }
 @property(nonatomic, assign) BOOL isOver;
-@property(nonatomic, strong, readonly) NSMutableArray *datas;
+@property(strong, readonly) NSMutableArray *datas;
 @property(nonatomic, strong, readonly) AFHTTPRequestOperationManager *manger;
 @property(nonatomic, copy) NSString *url;
 @property(nonatomic, copy) NSString *mobileUrl;

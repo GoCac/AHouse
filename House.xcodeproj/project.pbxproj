@@ -72,6 +72,8 @@
 		BBB1F4631C3E1A8700709674 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4621C3E1A8700709674 /* WebViewController.m */; };
 		BBB1F4661C436C8000709674 /* StringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4651C436C8000709674 /* StringUtils.m */; };
 		BBB1F4691C4E201100709674 /* SaveModelUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB1F4681C4E201100709674 /* SaveModelUtils.m */; };
+		BBCBA9EA1CE4724600279C69 /* failure_image_red.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCBA9E91CE4724600279C69 /* failure_image_red.png */; };
+		BBCBA9ED1CE4746700279C69 /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCBA9EC1CE4746700279C69 /* ImageUtil.m */; };
 		BBDD44851CC0CED000B0CC55 /* ServerArrayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */; };
 		BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD44871CC0CF0C00B0CC55 /* ServerObjResult.m */; };
 		BBE129FB1CD8A8AD00968A4B /* Househelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE129FA1CD8A8AD00968A4B /* Househelpers.m */; };
@@ -213,6 +215,9 @@
 		BBB1F4651C436C8000709674 /* StringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtils.m; sourceTree = "<group>"; };
 		BBB1F4671C4E201100709674 /* SaveModelUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveModelUtils.h; sourceTree = "<group>"; };
 		BBB1F4681C4E201100709674 /* SaveModelUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveModelUtils.m; sourceTree = "<group>"; };
+		BBCBA9E91CE4724600279C69 /* failure_image_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = failure_image_red.png; sourceTree = "<group>"; };
+		BBCBA9EB1CE4746700279C69 /* ImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtil.h; sourceTree = "<group>"; };
+		BBCBA9EC1CE4746700279C69 /* ImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtil.m; sourceTree = "<group>"; };
 		BBDD44831CC0CED000B0CC55 /* ServerArrayResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerArrayResult.h; sourceTree = "<group>"; };
 		BBDD44841CC0CED000B0CC55 /* ServerArrayResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerArrayResult.m; sourceTree = "<group>"; };
 		BBDD44861CC0CF0C00B0CC55 /* ServerObjResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerObjResult.h; sourceTree = "<group>"; };
@@ -416,6 +421,7 @@
 		BB2BACD71BEB866A00DB0FD8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BBCBA9E91CE4724600279C69 /* failure_image_red.png */,
 				BB7F51391BF1F26C00E4634F /* github.png */,
 				BB7F51371BF1EE2F00E4634F /* zoro.jpg */,
 				BB7F51351BF1EE2800E4634F /* three.jpg */,
@@ -443,6 +449,8 @@
 				BBB1F4681C4E201100709674 /* SaveModelUtils.m */,
 				BBE57B451CDDD71A0050A019 /* DateUtil.h */,
 				BBE57B461CDDD71A0050A019 /* DateUtil.m */,
+				BBCBA9EB1CE4746700279C69 /* ImageUtil.h */,
+				BBCBA9EC1CE4746700279C69 /* ImageUtil.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -658,6 +666,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCBA9EA1CE4724600279C69 /* failure_image_red.png in Resources */,
 				BB7F51361BF1EE2800E4634F /* three.jpg in Resources */,
 				BB7F51341BF1EE2000E4634F /* onepiece.jpg in Resources */,
 				BB2BACEC1BEDC06100DB0FD8 /* maoni.png in Resources */,
@@ -770,6 +779,7 @@
 				BB2BACE31BEB956000DB0FD8 /* CircleView.m in Sources */,
 				BB2BACC61BEA341A00DB0FD8 /* BaseTableViewController.m in Sources */,
 				BB6206831C8EDE7800F2D738 /* BaseViewController.m in Sources */,
+				BBCBA9ED1CE4746700279C69 /* ImageUtil.m in Sources */,
 				BB7F51971C05A9E600E4634F /* NewsTableViewController.m in Sources */,
 				BB6206861C8EDF1300F2D738 /* NetWorkManager.m in Sources */,
 				BBB1F4661C436C8000709674 /* StringUtils.m in Sources */,

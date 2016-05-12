@@ -7,7 +7,13 @@
 //
 
 #import "ImageUtil.h"
-
 @implementation ImageUtil
-
++ (UIImage *)placeholderImage {
+    static UIImage *image;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        image = [UIImage imageNamed:@"failure_image_red.png"];
+    });
+    return image;
+}
 @end
