@@ -9,6 +9,7 @@
 #import "CalculatorViewController.h"
 #import "NSString+Height.h"
 #import "BaseViewController.h"
+#import "UIButton+Selector.h"
 #define APP_BASIC_FONT_NAME @"Avenir-Book"
 
 #define APP_BASIC_FONT_SIZE 14.0f
@@ -147,6 +148,7 @@
     
     self.calculateButton = [[UIButton alloc] initWithFrame:CGRectMake(leftMargin, self.nextViewStartY += topMargin, SCREEN_WIDTH - leftMargin * 2, 48)];
     [self.calculateButton setTitle:@"计       算" forState:UIControlStateNormal];
+    [self.calculateButton setSelector];
     [self.calculateButton setBackgroundColor:[UIColor redColor]];
     [self.calculateButton.layer setCornerRadius:5.0f];
     self.nextViewStartY += 48;

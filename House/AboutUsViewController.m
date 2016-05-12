@@ -52,6 +52,7 @@
     self.appVersionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, startY += 10, SCREEN_WIDTH, height)];
     [self.appVersionLabel setText:str];
     [self.appVersionLabel setFont:font];
+    [self.appVersionLabel setTextColor:[UIColor grayColor]];
     [self.appVersionLabel setTextAlignment:NSTextAlignmentCenter];
     startY += height;
     
@@ -63,6 +64,7 @@
     self.appAboutLabel.numberOfLines = 0;
     [self.appAboutLabel setText:str];
     [self.appAboutLabel setFont:font];
+    [self.appAboutLabel setTextColor:[UIColor grayColor]];
     [self.appAboutLabel setTextAlignment:NSTextAlignmentLeft];
     startY += height;
     
@@ -72,6 +74,7 @@
     self.appCopyRightTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, startY += (SCREEN_HEIGHT - startY - 100), SCREEN_WIDTH, height)];
     [self.appCopyRightTopLabel setText:str];
     [self.appCopyRightTopLabel setFont:font];
+    [self.appCopyRightTopLabel setTextColor:[UIColor grayColor]];
     [self.appCopyRightTopLabel setTextAlignment:NSTextAlignmentCenter];
     startY += height;
     
@@ -81,6 +84,7 @@
     self.appCopyRightBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, startY += 25, SCREEN_WIDTH, height)];
     [self.appCopyRightBottomLabel setText:str];
     [self.appCopyRightBottomLabel setFont:font];
+    [self.appCopyRightBottomLabel setTextColor:[UIColor grayColor]];
     [self.appCopyRightBottomLabel setTextAlignment:NSTextAlignmentCenter];
     startY += height;
                                                                  

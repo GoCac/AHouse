@@ -19,6 +19,7 @@
 #import "CalculatorViewController.h"
 
 #define ICON_ABOUT_COMPANY @"about_company.png"
+#define ICON_COMPANY_SITE @"about_company.png"
 #define ICON_UPDATE @"about_update.png"
 #define ICON_FEEDBACK @"about_advice.png"
 #define ICON_ABOUT_US @"about_us.png"
@@ -46,8 +47,8 @@
     [self.view addSubview:self.tableView];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
-    self.datas = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"公司简介", nil], [NSArray arrayWithObjects:@"意见反馈", @"版本更新", @"关于我们", @"房贷计算器", nil], nil];
-    self.iconPaths = [NSArray arrayWithObjects:[NSArray arrayWithObjects:ICON_ABOUT_COMPANY, nil], [NSArray arrayWithObjects:ICON_FEEDBACK, ICON_UPDATE, ICON_ABOUT_US, ICON_CALCULATOR ,nil], nil];
+    self.datas = [NSArray arrayWithObjects:[NSArray arrayWithObjects:@"集团简介",@"集团官网", nil], [NSArray arrayWithObjects:@"意见反馈", @"版本更新", @"关于我们", @"房贷计算器", nil], nil];
+    self.iconPaths = [NSArray arrayWithObjects:[NSArray arrayWithObjects:ICON_ABOUT_COMPANY,ICON_COMPANY_SITE, nil], [NSArray arrayWithObjects:ICON_FEEDBACK, ICON_UPDATE, ICON_ABOUT_US, ICON_CALCULATOR ,nil], nil];
 }
 
 #pragma UITableViewDataSource
@@ -95,6 +96,8 @@
             WebViewController *webViewController = [[WebViewController alloc] init];
             [webViewController setUrl:COMPANY_URL];
             [self.tabBarController.navigationController pushViewController:webViewController animated:YES];
+        } else if(1 == [indexPath row]) {
+           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.jinchenchina.cn"]];
         }
     }
 }

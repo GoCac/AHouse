@@ -25,6 +25,8 @@
 		BB07254D1CE18EB800571582 /* tab_chat_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BB0725491CE18EB800571582 /* tab_chat_normal.png */; };
 		BB07254E1CE18EB800571582 /* tab_home_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = BB07254A1CE18EB800571582 /* tab_home_normal.png */; };
 		BB0725511CE19DDE00571582 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0725501CE19DDE00571582 /* CalculatorViewController.m */; };
+		BB16B6001CE43C0400084DCF /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BB16B5FF1CE43C0400084DCF /* UIImage+ImageWithColor.m */; };
+		BB16B6041CE4435600084DCF /* UIButton+Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = BB16B6031CE4435600084DCF /* UIButton+Selector.m */; };
 		BB1A1B121CBBC40500181CE0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1A1B111CBBC40500181CE0 /* MapViewController.m */; };
 		BB2BAC9B1BE8E77100DB0FD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2BAC9A1BE8E77100DB0FD8 /* main.m */; };
 		BB2BAC9E1BE8E77100DB0FD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2BAC9D1BE8E77100DB0FD8 /* AppDelegate.m */; };
@@ -135,6 +137,10 @@
 		BB07254A1CE18EB800571582 /* tab_home_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab_home_normal.png; path = "../../../Downloads/House-master/app/src/main/res/drawable-hdpi/tab_home_normal.png"; sourceTree = "<group>"; };
 		BB07254F1CE19DDE00571582 /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		BB0725501CE19DDE00571582 /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		BB16B5FE1CE43C0400084DCF /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
+		BB16B5FF1CE43C0400084DCF /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		BB16B6021CE4435600084DCF /* UIButton+Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Selector.h"; sourceTree = "<group>"; };
+		BB16B6031CE4435600084DCF /* UIButton+Selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Selector.m"; sourceTree = "<group>"; };
 		BB1A1B101CBBC40500181CE0 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		BB1A1B111CBBC40500181CE0 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		BB2BAC951BE8E77100DB0FD8 /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -564,6 +570,10 @@
 				BB7F518B1C044A1B00E4634F /* NSString+Height.m */,
 				BBB1F4521C2E7D7000709674 /* NSDictionary+Validation.h */,
 				BBB1F4531C2E7D7000709674 /* NSDictionary+Validation.m */,
+				BB16B5FE1CE43C0400084DCF /* UIImage+ImageWithColor.h */,
+				BB16B5FF1CE43C0400084DCF /* UIImage+ImageWithColor.m */,
+				BB16B6021CE4435600084DCF /* UIButton+Selector.h */,
+				BB16B6031CE4435600084DCF /* UIButton+Selector.m */,
 			);
 			name = categories;
 			sourceTree = "<group>";
@@ -832,6 +842,7 @@
 				BB7F517F1C030C9500E4634F /* ALNewsCell.m in Sources */,
 				BB7F51BC1C084F0500E4634F /* AboutViewController.m in Sources */,
 				BBB1F44B1C1EC3E600709674 /* CommonEnums.m in Sources */,
+				BB16B6041CE4435600084DCF /* UIButton+Selector.m in Sources */,
 				BB2BAC9E1BE8E77100DB0FD8 /* AppDelegate.m in Sources */,
 				BBB1F45A1C33B4C100709674 /* TestViewController.m in Sources */,
 				BBE57B4A1CE0334A0050A019 /* CircleViewController.m in Sources */,
@@ -844,6 +855,7 @@
 				BB0725511CE19DDE00571582 /* CalculatorViewController.m in Sources */,
 				BBDD44881CC0CF0C00B0CC55 /* ServerObjResult.m in Sources */,
 				BB2BACE31BEB956000DB0FD8 /* CircleView.m in Sources */,
+				BB16B6001CE43C0400084DCF /* UIImage+ImageWithColor.m in Sources */,
 				BB2BACC61BEA341A00DB0FD8 /* BaseTableViewController.m in Sources */,
 				BB6206831C8EDE7800F2D738 /* BaseViewController.m in Sources */,
 				BB7F51971C05A9E600E4634F /* NewsTableViewController.m in Sources */,
