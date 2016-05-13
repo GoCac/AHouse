@@ -30,6 +30,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:view];
     NSLog(@"B1");
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"地图" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToMap)]];
     NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", nil];
     self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, CIRCLEVIEW_HEIGHT) autoPlay:YES timeInterval:4.2f];
@@ -49,7 +50,7 @@
     [self.circleTextView setDelegate:self];
     [self.view addSubview:self.circleTextView];
     NSLog(@"B2");
-    self.isFirst = false;
+    self.isFirst = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,7 +58,7 @@
     if (self.isFirst) {
         [self.circleView setImageUrls:self.houseDetail.imageUrls];
         [self.detailView updateWithHouse:self.houseDetail];
-        self.isFirst = YES;
+        self.isFirst = NO;
     }
     NSLog(@"imageUrls is %@", _houseDetail.imageUrls);
 }

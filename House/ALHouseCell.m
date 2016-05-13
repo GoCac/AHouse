@@ -50,7 +50,7 @@
         [self.contentView addSubview:self.phone];
         
         CGFloat imageWidth = kWidthAndHeightRate * height;
-        self.picture = [[UIImageView alloc] initWithFrame:CGRectMake(kPaddingCommon, kPaddingCommon, imageWidth,  height)];
+        self.picture = [[UIImageView alloc] initWithFrame:CGRectMake(kPaddingCommon, 3 * kPaddingCommon, imageWidth,  height)];
         [self.contentView addSubview:self.picture];
         
         self.ratingView = [[RatingView alloc] initWithFrame:CGRectMake(0, 0, [RatingView getWidth:kRatingViewHeight spacing:kRatingViewSpacing], kRatingViewHeight) spacing:kRatingViewSpacing];
@@ -77,32 +77,32 @@
             make.top.equalTo(self.contentView.mas_top).with.offset(kPaddingTopAndBottom);
         }];
         [self.ratingView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView.mas_left).with.offset(2 * kPaddingCommon + imageWidth);
             make.top.equalTo(self.name.mas_bottom).with.offset(0);
-            make.bottom.equalTo(self.intro.mas_top).with.offset(0);
+            make.left.equalTo(self.contentView.mas_left).with.offset(2 * kPaddingCommon + imageWidth);
+//            make.bottom.equalTo(self.intro.mas_top).with.offset(-1);
         }];
         [self.intro mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).with.offset(2 * kPaddingCommon + imageWidth);
-//            make.top.equalTo(self.ratingView.mas_bottom).with.offset(0);
+//            make.top.equalTo(self.ratingView.mas_bottom).with.offset(10);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kPaddingCommon);
 //            make.center.equalTo(self.contentView).centerOffset(CGPointMake(0.5 * (kPaddingCommon + imageWidth), 0.5 * (kRatingViewHeight - [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_PHONE_SIZE]])));
-//            make.bottom.equalTo(self.phone.mas_top).with.offset(0);
+            make.bottom.equalTo(self.phone.mas_top).with.offset(-kPaddingCommon);
         }];
         [self.phone mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.intro.mas_bottom).with.offset(0);
+//            make.top.equalTo(self.intro.mas_bottom).with.offset(0);
             make.left.equalTo(self.contentView.mas_left).with.offset(2 * kPaddingCommon + imageWidth);
-//            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-(kPaddingCommon));
+            make.bottom.equalTo(self.labelFirst.mas_top).with.offset(-kPaddingLabelAndPhoneSpacing);
         }];
 //        [self.phone setBackgroundColor:[UIColor orangeColor]];
         [self.labelFirst mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kPaddingCommon);
-            make.left.equalTo(self.contentView.mas_left).with.offset(2 * kPaddingCommon);
-            make.top.equalTo(self.phone.mas_bottom).with.offset(kPaddingLabelAndPhoneSpacing);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kPaddingTopAndBottom);
+            make.left.equalTo(self.contentView.mas_left).with.offset(kPaddingCommon);
+//            make.top.equalTo(self.phone.mas_bottom).with.offset(kPaddingLabelAndPhoneSpacing);
         }];
         [self.labelOthers mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.top.equalTo(self.phone.mas_bottom).with.offset(kPaddingLabelAndPhoneSpacing);
-            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kPaddingCommon);
-            make.left.equalTo(self.labelFirst.mas_right).with.offset(kPaddingCommon * 3);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kPaddingTopAndBottom);
+            make.left.equalTo(self.labelFirst.mas_right).with.offset(kPaddingCommon * 2);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kPaddingCommon);
         }];
     }
@@ -140,13 +140,13 @@
         height += (2 + 1) * [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_INTRO_SIZE]];
         height += [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_PHONE_SIZE]];
         height += kRatingViewHeight;
-        height += 2 * (kPaddingTopAndBottom + kPaddingLabelAndPhoneSpacing) + kPaddingTopAndBottom;
+        height += 2 * (kPaddingTopAndBottom + kPaddingCommon) + kPaddingLabelAndPhoneSpacing + 5;
     });
     return height;
 }
 
 - (CGFloat)imageHeight {
-    return [ALHouseCell height] - [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_NAME_SIZE]] - 2 * kPaddingCommon - kPaddingLabelAndPhoneSpacing;
+    return [ALHouseCell height] - [NSString heightSingle:[UIFont fontWithName:FONT_NAME size:FONT_NAME_SIZE]] - 2 * (kPaddingTopAndBottom + kPaddingCommon) - kPaddingLabelAndPhoneSpacing;
 }
 
 - (void)awakeFromNib {

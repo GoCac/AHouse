@@ -8,9 +8,11 @@
 
 #import "CircleViewController.h"
 #import "CircleView.h"
+#import "HouseDetail.h"
+#import "HouseDetailViewController.h"
 
-@interface CircleViewController ()
-
+@interface CircleViewController () <CircleViewDelegate>
+@property(nonatomic, strong) CircleView *circleView;
 @end
 
 @implementation CircleViewController
@@ -20,10 +22,20 @@
     // Do any additional setup after loading the view.
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:view];
-    NSArray *images = [NSArray arrayWithObjects:@"zoro.jpg", @"three.jpg", @"onepiece.jpg", nil];
-    CircleView *circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT) autoPlay:YES images:images timeInterval:4.3f];
-    [self.view addSubview:circleView];
+    self.circleView = [[CircleView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT) autoPlay:YES timeInterval:4.6f];
+    [self.circleView setImageUrls:self.urls];
+    [self.circleView setDelegate:self];
+    [self.view addSubview:self.circleView];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)circleViewDidSelectImage:(CircleView *)circleView atIndex:(NSUInteger)index {
+    if (nil != self.house) {
+        HouseDetailViewController *hdvController = [[HouseDetailViewController alloc] init];
+        [hdvController setHouseDetail:self.house];
+//        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController pushViewController:hdvController animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
