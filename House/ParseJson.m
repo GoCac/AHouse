@@ -96,7 +96,7 @@
     Class currentClass = mClass;
     while (currentClass != [NSObject class]) {
         unsigned int count = 0;
-        //不包括父类的属性
+        //不包括父类的属性，需要继续循环
         objc_property_t *properties = class_copyPropertyList(currentClass, &count);
         for (int i = 0; i < count; i++) {
             [sets addObject:[NSString stringWithUTF8String:property_getName(properties[i])]];

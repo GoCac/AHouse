@@ -15,7 +15,7 @@
 
 
 #define kNewsPaddingCommon 9
-#define kNewsPaddingTopAndBottom 16
+#define kNewsPaddingTopAndBottom 15
 
 #define kNewsWidthAndHeightRate 1.618
 #define NEWS_FONT_NAME @"Avenir-Book"
@@ -53,28 +53,25 @@
         [self.mImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self.contentView addSubview:self.mImageView];
         
-        [self.mImageView mas_makeConstraints:^(MASConstraintMaker *make) {//上下20
+        [self.mImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).with.offset(kNewsPaddingTopAndBottom);
-            make.right.equalTo(self.title.mas_left).with.offset(-10);
             make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon);
+            make.right.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon + imageWidth);
             make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingTopAndBottom);
         }];
         
-        [self.title mas_makeConstraints:^(MASConstraintMaker *make) {//上15 下 10
+        [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).with.offset(kNewsPaddingCommon);
+            make.left.equalTo(self.mImageView.mas_right).with.offset(kNewsPaddingCommon);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kNewsPaddingCommon);
-            make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon + imageWidth + 10);
-            make.bottom.equalTo(self.author.mas_top).with.offset(-5);
         }];
         [self.author mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.title.mas_bottom).with.offset(5);
+            make.left.equalTo(self.mImageView.mas_right).with.offset(kNewsPaddingCommon);
             make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingCommon);
-            make.left.equalTo(self.contentView.mas_left).with.offset(kNewsPaddingCommon + imageWidth + 10);
         }];
         [self.time mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.title.mas_bottom).with.offset(5);
-            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingCommon);
             make.right.equalTo(self.contentView.mas_right).with.offset(-kNewsPaddingCommon);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-kNewsPaddingCommon);
         }];
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
         [self.selectedBackgroundView setBackgroundColor:[UIColor orangeColor]];
@@ -88,7 +85,7 @@
     dispatch_once(&onceToken, ^{
         height += 2 * [NSString heightSingle:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_NAME_SIZE]];
         height += [NSString heightSingle:[UIFont fontWithName:NEWS_FONT_NAME size:NEWS_FONT_AUTHOR_SIZE]];
-        height += 2 * kNewsPaddingTopAndBottom + 5;
+        height += 2 * kNewsPaddingCommon + 5;
     });
     return height;
 }

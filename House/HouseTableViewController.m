@@ -11,6 +11,7 @@
 #import "HouseDetail.h"
 #import "ParseJson.h"
 #import "HouseDetailViewController.h"
+#import "CircleViewController.h"
 
 #define PAGE_SIZE_HOUSE 8
 
@@ -56,9 +57,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    HouseDetailViewController *hdvController = [[HouseDetailViewController alloc] init];
-    [hdvController setHouseDetail:(HouseDetail *)self.datas[[indexPath row]]];
-    [self.tabBarController.navigationController pushViewController:hdvController animated:YES];
+    HouseDetail *detail = (HouseDetail *)self.datas[[indexPath row]];
+    if ([detail.imageUrls count] > 0) {
+        CircleViewController *circleViewController = [[CircleViewController alloc] init];
+        [circleViewController setUrls:detail.imageUrls];
+        [circleViewController setHouse:detail];
+        [self.tabBarController.navigationController pushViewController:circleViewController animated:YES];
+    } else {
+        HouseDetailViewController *hdvController = [[HouseDetailViewController alloc] init];
+        [hdvController setHouseDetail:detail];
+        [self.tabBarController.navigationController pushViewController:hdvController animated:YES];
+    }
+    
 }
 
 /*
